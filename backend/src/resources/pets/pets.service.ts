@@ -12,6 +12,12 @@ export class PetsService {
    * Trouve tous les animaux
    */
   findAll(): Pet[] {
+    /*
+     * const databaseConnection = new JeSaisPasConnectToMySql(dotenv('gfg'))
+     * const result = databaseConnection.query('SELECT * FROM movies') // array of brols
+     * const movies = MapResultToArrayOfMovies(result)
+     * return movies
+     */
     return this.pets
   }
 
@@ -20,7 +26,7 @@ export class PetsService {
    * @param id - ID unique de l'animal
    */
   findOne(id: number): Pet | undefined {
-    return this.pets.find(pet => pet.id === id)
+    return this.pets.find((pet) => pet.id === id)
   }
 
   /**
@@ -32,7 +38,7 @@ export class PetsService {
    * @param id - ID unique de l'animal
    */
   update(petData: Partial<Pet>, id: number): Pet | undefined {
-    const index = this.pets.findIndex(pet => pet.id === id)
+    const index = this.pets.findIndex((pet) => pet.id === id)
 
     if (index === -1) {
       throw new NotFoundException('Animal introuvable')
@@ -67,6 +73,6 @@ export class PetsService {
    * Suppression d'un animal
    */
   delete(id: number) {
-    this.pets = this.pets.filter(pet => pet.id !== id)
+    this.pets = this.pets.filter((pet) => pet.id !== id)
   }
 }

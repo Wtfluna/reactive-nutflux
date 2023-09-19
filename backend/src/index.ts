@@ -1,5 +1,7 @@
 import cors from 'cors'
 import express from 'express'
+import swaggerJsdoc from 'swagger-jsdoc'
+import swaggerUi from 'swagger-ui-express'
 import { config } from '~/config'
 import { PetsController } from '~/resources/pets/pets.controller'
 import { ExceptionsHandler } from '~/middlewares/exceptions.handler'
@@ -33,6 +35,43 @@ app.use('/pets', PetsController)
  */
 app.get('/', (req, res) => res.send('🏠'))
 
+const options = {
+  definition: {
+    openapi: '3.1.0',
+    info: {
+      title: 'Nutflux API',
+      version: '0.1.0',
+      description:
+        'This is a simple CRUD API application made with Express and documented with Swagger',
+      license: {
+        name: 'MIT',
+        url: 'https://spdx.org/licenses/MIT.html'
+      },
+      contact: {
+        name: 'Nutflux'
+        /*
+         * url: "https://logrocket.com",
+         * email: "info@email.com",
+         */
+      }
+    },
+    servers: [
+      {
+        url: `http://localhost:${config.API_PORT}`
+      }
+    ]
+  },
+  apis: ['./src/resources/.documentation/*.ts']
+}
+
+const specs = swaggerJsdoc(options)
+
+app.use(
+  '/api-docs',
+  swaggerUi.serve,
+  swaggerUi.setup(specs, { explorer: true })
+)
+
 /**
  * Pour toutes les autres routes non définies, on retourne une erreur
  */
@@ -48,3 +87,5 @@ app.use(ExceptionsHandler)
  * On demande à Express d'ecouter les requêtes sur le port défini dans la config
  */
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
+
+// http://localhost:3000/api-docs/
