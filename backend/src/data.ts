@@ -1,4 +1,4 @@
-import type { Pet } from '~~/types/pets'
+import type { Pet } from '~/types/pets'
 
 /**
  * On imagine que ce sont des données reçues de la base de données

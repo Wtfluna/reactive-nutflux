@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch src -e js,ts,json --exec \"ts-node src/index.ts\"",
+    "dev": "nodemon --watch src -e js,ts,json,yml --exec \"ts-node src/index.ts\"",
     "build": "tsup src/index.ts --format cjs --clean",
     "start": "node dist/index.js",
     "lint": "eslint . --ext .js,.ts",

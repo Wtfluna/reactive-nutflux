@@ -1,0 +1,32 @@
+tags:
+  name: Movie
+  description: The movies managing API
+  
+/movies/all:
+  get:
+    summary: Retrieve movie's list
+    tags: [Movie]
+    responses:
+      200:
+        description: The movies' list.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Movie'
+      500:
+        description: Internal server error
+/movies/:id:
+  get:
+    summary: Retrieve one movie
+    tags: [Movie]
+    responses:
+      200:
+        description: The requested movie.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Movie'
+      500:
+        description: Internal server error
