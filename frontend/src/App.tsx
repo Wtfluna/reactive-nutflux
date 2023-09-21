@@ -20,7 +20,7 @@ function App() {
     poster:
       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
   };
-  const movies: Movie[] = [
+  /*const movies: Movie[] = [
     {
       id: 1,
       title: "Reservoir Dogs",
@@ -120,7 +120,7 @@ function App() {
     //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     //   },
   ];
-
+*/
   return (
     <>
       <h1> Mon super titre</h1>
