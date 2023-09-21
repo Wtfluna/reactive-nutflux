@@ -1,4 +1,4 @@
-import type { Pet } from '~~/types/pets'
+import type { Pet } from '~/types/pets'
 import { pets } from '~/data'
 import { NotFoundException } from '~/utils/exceptions'
 

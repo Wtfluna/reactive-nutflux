@@ -6,6 +6,7 @@ import { config } from '~/config'
 import { PetsController } from '~/resources/pets/pets.controller'
 import { ExceptionsHandler } from '~/middlewares/exceptions.handler'
 import { UnknownRoutesHandler } from '~/middlewares/unknownRoutes.handler'
+import { options } from './open-api-options'
 
 /**
  * On créé une nouvelle "application" express
@@ -31,45 +32,12 @@ app.use(cors())
 app.use('/pets', PetsController)
 
 /**
- * Homepage (uniquement necessaire pour cette demo)
+ * Swagger (pour voir le contrat de l'API)
  */
-app.get('/', (req, res) => res.send('🏠'))
-
-const options = {
-  definition: {
-    openapi: '3.1.0',
-    info: {
-      title: 'Nutflux API',
-      version: '0.1.0',
-      description:
-        'This is a simple CRUD API application made with Express and documented with Swagger',
-      license: {
-        name: 'MIT',
-        url: 'https://spdx.org/licenses/MIT.html'
-      },
-      contact: {
-        name: 'Nutflux'
-        /*
-         * url: "https://logrocket.com",
-         * email: "info@email.com",
-         */
-      }
-    },
-    servers: [
-      {
-        url: `http://localhost:${config.API_PORT}`
-      }
-    ]
-  },
-  apis: ['./src/resources/.documentation/*.ts']
-}
-
-const specs = swaggerJsdoc(options)
-
 app.use(
   '/api-docs',
   swaggerUi.serve,
-  swaggerUi.setup(specs, { explorer: true })
+  swaggerUi.setup(swaggerJsdoc(options), { explorer: true })
 )
 
 /**
