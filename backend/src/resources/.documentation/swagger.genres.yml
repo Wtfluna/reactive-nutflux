@@ -1,0 +1,36 @@
+tags:
+  name: Genre
+  description: The genre's managing API
+
+paths:
+  /genre/{genre_id}:
+    get:
+      summary: Retrieve a genre by ID
+      tags: [Genre]
+      responses:
+        200:
+          description: Genre retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+        404:
+          description: Genre not found
+components:
+  schemas:
+    Genre:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated ID of a genre
+        name:
+          type: string
+          description: The name of the genre
+        description:
+          type: string
+          description: A description of the genre
+      example:
+        id: 1
+        name: Action
+        description: A genre of movies known for their action-packed scenes

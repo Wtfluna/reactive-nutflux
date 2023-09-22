@@ -1,0 +1,58 @@
+tags:
+  name: User
+  description: The user's managing API
+
+paths:
+  /users/{id}:
+    get:
+      summary: Retrieve one user
+      tags: [User]
+      responses:
+        200:
+          description: The required user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          description: User not found.
+/users/account/{account_id}:
+  get:
+    summary: Retrieve user by account ID
+    tags: [User]
+    responses:
+      200:
+        description: The user associated with the account.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      404:
+        description: User not found for the specified account.
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated id of a user
+        username:
+          type: string
+          description: The user's username
+        created_at:
+          type: string
+          format: date
+          description: The date the user created its account
+        account_id:
+          type: number
+          description: The id of the account
+        avatar:
+          type: string
+          description: The avatar of the user
+      example:
+        id: 1
+        username: Wtfluna
+        created_at: 01-01-2023
+        account_id: 1
+        avatar: https://www.gstatic.com/android/keyboard/emojikitchen/20230803/u1f42e/u1f42e_u1f388.png

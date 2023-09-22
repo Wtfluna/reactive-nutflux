@@ -1,6 +1,6 @@
 tags:
-  - name: Serie
-    description: The serie's managing API
+  name: Serie
+  description: The serie's managing API
 
 paths:
   /series/all:
@@ -16,8 +16,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Serie'
-        500:
-          description: Internal server error
+        404:
+          description: Not found
   /series/{id}:
     get:
       summary: Retrieve one serie
@@ -29,8 +29,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Serie'
-        500:
-          description: Internal server error
+        404:
+          description: Serie's not found
   /series/genre/{genre_id}:
     get:
       summary: Retrieve series by genre
@@ -44,7 +44,21 @@ paths:
                 $ref: '#/components/schemas/Serie'
         500:
           description: Internal server error
-
+/series/list/{list_id}:
+  get:
+    summary: Get a list of series by list ID
+    tags: [Serie]
+    responses:
+      200:
+        description: Success - Series list found
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Serie'
+      404:
+        description: Series list not found
 components:
   schemas:
     Serie:
@@ -61,6 +75,7 @@ components:
           description: The duration of a serie
         release_date:
           type: number
+          format: date
           description: The year the serie was released
         summary:
           type: string

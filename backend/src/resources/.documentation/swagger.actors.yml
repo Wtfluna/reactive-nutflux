@@ -1,12 +1,38 @@
-actors/id
-directors/id
+tags:
+  name: Actor
+  description: The actor's managing API
 
-genres/id
+path:
+/actors/{id}:
+  get:
+    summary: Get an actor by ID
+    tags: [Actor]
+    responses:
+      200:
+        description: The requested actor.
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Actor'
+      404::
+        description: Actor not found
 
-users/id
-users/account/account_id
-
-lists/user_id
-
-movies/list/list_id
-series/list/list_id
+components:
+  schemas:
+    Actor:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated id of an actor
+        firstname:
+          type: string
+          description: The actor's firstname
+        lastname:
+          type: string
+          description: The actor's lastname
+      example:
+        id: 1
+        firstname: John
+        lastname: Travolta
