@@ -1,7 +1,8 @@
 tags:
   name: Movie
-  description: The movies managing API
-  
+  description: The movie's managing API
+
+path:
 /movies/all:
   get:
     summary: Retrieve movie's list
@@ -17,7 +18,7 @@ tags:
                 $ref: '#/components/schemas/Movie'
       500:
         description: Internal server error
-/movies/:id:
+/movies/{id}:
   get:
     summary: Retrieve one movie
     tags: [Movie]
@@ -30,3 +31,65 @@ tags:
               $ref: '#/components/schemas/Movie'
       500:
         description: Internal server error
+/movies/genre/{genre_id}:
+  get:
+    summary: Retrieve movies by genre
+    tags: [Movie]
+    responses:
+      200:
+        description: A list of movies sort by genre.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Movie'
+      500:
+        description: Internal server error
+
+components:
+  schemas:
+    Movie:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated id of a movie
+        title:
+          type: string
+          description: The title of the movie
+        duration:
+          type: time
+          description: The duration of a movie
+        release_date:
+          type: number
+          description: The year the movie was released
+        summary:
+          type: string
+          description: The summary of a movie
+        director_id:
+          type: number
+          description: The auto-generated id of a director
+        genre_id:
+          type: number
+          description: The auto_generated id of a genre
+        pegi:
+          type: number
+          description: The age limit to see a movie
+        trailer:
+          type: string
+          description: A YouTube link to the trailer of a movie
+        poster:
+          type: string
+          description: A link to the poster of a movie
+      example:
+        id: 1
+        title: Reservoir Dogs
+        duration: 01:39:00
+        release_date: 1992
+        summary: When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.
+        director_id: 1
+        genre_id: 11
+        pegi: 18
+        trailer: https://www.youtube.com/watch?v=GLPJSmUHZvU
+        poster: https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg

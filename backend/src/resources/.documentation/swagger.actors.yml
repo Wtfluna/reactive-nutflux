@@ -1,0 +1,12 @@
+actors/id
+directors/id
+
+genres/id
+
+users/id
+users/account/account_id
+
+lists/user_id
+
+movies/list/list_id
+series/list/list_id
