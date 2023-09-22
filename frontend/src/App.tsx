@@ -1,3 +1,14 @@
+//CHOOSE PROFILE
+import ChooseProfile from "./components/pages/ChooseProfile";
+
+export default function App(){
+ return (
+   <>
+     <ChooseProfile/>
+   </>
+ );
+}
+
 /*//SIGN UP 
  import Navbar from "./components/Navbar/Navbar";
  import SignUp from "./components/pages/SignUp";
@@ -25,7 +36,7 @@ import Navbar from "./components/Navbar/Navbar";
   );
  }
  */
-
+/*
  //WELCOME PAGE
  import Navbar from "./components/Navbar/Navbar";
  import Welcome from "./components/pages/Welcome";
