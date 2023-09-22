@@ -11,13 +11,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="navbar-logo">Logo</div>
+        <div className="navbar-logo"> <a href="./Welcome.tsx"><img src="./assets/NUTFLUX.png" alt="logo" /></a></div>
         <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Series</a></li>
-            <li><a href="#">My profile</a></li>
+            <li><a href="./LogIn.tsx">Login</a></li>
           </ul>
         </div>
         <div className="navbar-toggle" onClick={toggleNavbar}>

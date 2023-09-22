@@ -1,4 +1,46 @@
-import MoviePage from "./components/MoviePage";
+/*//SIGN UP 
+ import Navbar from "./components/Navbar/Navbar";
+ import SignUp from "./components/pages/SignUp";
+ 
+ export default function App(){
+  return (
+    <>
+      <Navbar />
+      <SignUp/>
+    </>
+  );
+ }
+ */
+/*  
+ //LOGIN 
+import Navbar from "./components/Navbar/Navbar";
+ import LogIn from "./components/pages/LogIn";
+ 
+ export default function App(){
+  return (
+    <>
+      <Navbar />
+      <LogIn/>
+    </>
+  );
+ }
+ */
+
+ //WELCOME PAGE
+ import Navbar from "./components/Navbar/Navbar";
+ import Welcome from "./components/pages/Welcome";
+ 
+ export default function App(){
+  return (
+    <>
+      <Navbar />
+      <Welcome />
+    </>
+  );
+ }
+
+ //APP
+ /*import MoviePage from "./components/MoviePage";
 import Movie from "./types/movie";
 
 function App() {
@@ -20,7 +62,7 @@ function App() {
     poster:
       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
   };
-  /*const movies: Movie[] = [
+ const movies: Movie[] = [
     {
       id: 1,
       title: "Reservoir Dogs",
@@ -120,7 +162,7 @@ function App() {
     //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     //   },
   ];
-*/
+
   return (
     <>
       <h1> Mon super titre</h1>
@@ -132,3 +174,4 @@ function App() {
 }
 
 export default App;
+*/
