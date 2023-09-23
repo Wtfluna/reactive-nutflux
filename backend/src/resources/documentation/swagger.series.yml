@@ -2,6 +2,7 @@ tags:
   name: Serie
   description: The serie's managing API
 
+# --- Routes
 paths:
   /series/all:
     get:
@@ -22,6 +23,13 @@ paths:
     get:
       summary: Retrieve one serie
       tags: [Serie]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the serie to get
       responses:
         200:
           description: The requested serie.
@@ -35,6 +43,13 @@ paths:
     get:
       summary: Retrieve series by genre
       tags: [Serie]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Genre ID for which to retrieve the series
       responses:
         200:
           description: A list of series sort by genre.
@@ -44,21 +59,30 @@ paths:
                 $ref: '#/components/schemas/Serie'
         500:
           description: Internal server error
-/series/list/{list_id}:
-  get:
-    summary: Get a list of series by list ID
-    tags: [Serie]
-    responses:
-      200:
-        description: Success - Series list found
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/Serie'
-      404:
-        description: Series list not found
+  /series/list/{list_id}:
+    get:
+      summary: Get a list of series by list ID
+      tags: [Serie]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: List ID for which to retrieve the series
+      responses:
+        200:
+          description: Success - Series list found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Serie'
+        404:
+          description: Series list not found
+
+# --- Types
 components:
   schemas:
     Serie:

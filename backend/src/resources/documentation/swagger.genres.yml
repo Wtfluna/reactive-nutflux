@@ -2,11 +2,19 @@ tags:
   name: Genre
   description: The genre's managing API
 
+# --- Routes
 paths:
   /genre/{genre_id}:
     get:
       summary: Retrieve a genre by ID
       tags: [Genre]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the genre to get
       responses:
         200:
           description: Genre retrieved successfully
@@ -16,6 +24,8 @@ paths:
                 $ref: '#/components/schemas/Genre'
         404:
           description: Genre not found
+
+# --- Types
 components:
   schemas:
     Genre:

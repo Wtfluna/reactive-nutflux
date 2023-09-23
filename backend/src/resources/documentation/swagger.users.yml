@@ -2,33 +2,50 @@ tags:
   name: User
   description: The user's managing API
 
+# --- Routes
 paths:
   /users/{id}:
     get:
       summary: Retrieve one user
       tags: [User]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the user to get
       responses:
         200:
-          description: The required user.
+          description: The required user
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
         404:
-          description: User not found.
-/users/account/{account_id}:
-  get:
-    summary: Retrieve user by account ID
-    tags: [User]
-    responses:
-      200:
-        description: The user associated with the account.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-      404:
-        description: User not found for the specified account.
+          description: User not found
+  /users/account/{account_id}:
+    get:
+      summary: Retrieve user by account ID
+      tags: [User]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Account ID for which to retrieve the users
+      responses:
+        200:
+          description: The user associated with the account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          description: User not found for the specified account.
+
+# --- Types
 components:
   schemas:
     User:

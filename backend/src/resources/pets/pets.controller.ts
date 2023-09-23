@@ -15,9 +15,7 @@ const service = new PetsService()
  * Trouve tous les animaux
  */
 PetsController.get('/', (req, res) => {
-  return res
-    .status(200)
-    .json(service.findAll())
+  return res.status(200).json(service.findAll())
 })
 
 /**
@@ -36,9 +34,7 @@ PetsController.get('/:id', (req, res) => {
     throw new NotFoundException('Animal introuvable')
   }
 
-  return res
-    .status(200)
-    .json(pet)
+  return res.status(200).json(pet)
 })
 
 /**
@@ -47,9 +43,7 @@ PetsController.get('/:id', (req, res) => {
 PetsController.post('/', (req, res) => {
   const createdPet = service.create(req.body)
 
-  return res
-    .status(201)
-    .json(createdPet)
+  return res.status(201).json(createdPet)
 })
 
 /**
@@ -64,9 +58,7 @@ PetsController.patch('/:id', (req, res) => {
 
   const updatedPet = service.update(req.body, id)
 
-  return res
-    .status(200)
-    .json(updatedPet)
+  return res.status(200).json(updatedPet)
 })
 
 /**
@@ -79,9 +71,7 @@ PetsController.delete('/:id', (req, res) => {
     throw new BadRequestException('ID invalide')
   }
 
-  return res
-    .status(200)
-    .json(service.delete(id))
+  return res.status(200).json(service.delete(id))
 })
 
 /**
