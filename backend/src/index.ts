@@ -3,10 +3,10 @@ import express from 'express'
 import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 import { config } from '~/config'
-import { PetsController } from '~/resources/pets/pets.controller'
+import { options } from './open-api-options'
 import { ExceptionsHandler } from '~/middlewares/exceptions.handler'
 import { UnknownRoutesHandler } from '~/middlewares/unknownRoutes.handler'
-import { options } from './open-api-options'
+import { MoviesController } from './controllers/movies.controller'
 
 /**
  * On créé une nouvelle "application" express
@@ -27,12 +27,13 @@ app.use(express.json())
 app.use(cors())
 
 /**
- * Toutes les routes CRUD pour les animaux seronts préfixées par `/pets`
+ * Toutes les routes CRUD pour les films seronts préfixées par `/movies`
  */
-app.use('/pets', PetsController)
+app.use('/movies', MoviesController)
 
 /**
  * Swagger (pour voir le contrat de l'API)
+ * http://localhost:3000/api-docs/
  */
 app.use(
   '/api-docs',
@@ -55,5 +56,3 @@ app.use(ExceptionsHandler)
  * On demande à Express d'ecouter les requêtes sur le port défini dans la config
  */
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
-
-// http://localhost:3000/api-docs/
