@@ -7,6 +7,10 @@ import { options } from './open-api-options'
 import { ExceptionsHandler } from '~/middlewares/exceptions.handler'
 import { UnknownRoutesHandler } from '~/middlewares/unknownRoutes.handler'
 import { MoviesController } from './controllers/movies.controller'
+import { SeriesController } from './controllers/series.controller'
+import { GenresController } from './controllers/genres.controller'
+import { DirectorsController } from './controllers/directors.controller'
+import { ActorsController } from './controllers/actors.controller'
 
 /**
  * On créé une nouvelle "application" express
@@ -30,6 +34,14 @@ app.use(cors())
  * Toutes les routes CRUD pour les films seronts préfixées par `/movies`
  */
 app.use('/movies', MoviesController)
+
+app.use('/series', SeriesController)
+
+app.use('/genres', GenresController)
+
+app.use('/directors', DirectorsController)
+
+app.use('/actors', ActorsController)
 
 /**
  * Swagger (pour voir le contrat de l'API)

@@ -4,7 +4,7 @@ tags:
 
 # --- Routes
 paths:
-  /genre/{genre_id}:
+  /genres/{id}:
     get:
       summary: Retrieve a genre by ID
       tags: [Genre]

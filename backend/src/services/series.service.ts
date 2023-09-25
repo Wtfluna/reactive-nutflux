@@ -1,11 +1,11 @@
-import { Movie } from '~/types/movies'
+import { Serie } from '~/types/series'
 import mysql from 'mysql2'
 import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-export class MoviesService {
-  findAll(): Promise<Movie[]> {
+export class SeriesService {
+  findAll(): Promise<Serie[]> {
     return new Promise((resolve, reject) => {
       const connection = mysql.createConnection({
         host: process.env.DATABASE_SERVER,
@@ -14,16 +14,16 @@ export class MoviesService {
         database: process.env.DATABASE_DATABASE
       })
 
-      connection.query('SELECT * FROM movies', (err, res) => {
+      connection.query('SELECT * FROM series', (err, res) => {
         if (err) {
           reject(err)
         } else {
-          resolve(res as Movie[])
+          resolve(res as Serie[])
         }
       })
     })
   }
-  findById(id: number): Promise<Movie> {
+  findById(id: number): Promise<Serie> {
     return new Promise((resolve, reject) => {
       const connection = mysql.createConnection({
         host: process.env.DATABASE_SERVER,
@@ -33,18 +33,16 @@ export class MoviesService {
       })
 
       connection.query(
-        'SELECT * FROM movies WHERE id = ?',
+        'SELECT * FROM series WHERE id = ?',
         [id],
         (err, res) => {
           if (err) {
             reject(err)
           } else {
-            resolve(res as unknown as Movie)
+            resolve(res as unknown as Serie)
           }
         }
       )
     })
   }
 }
-
-// Le service contient la logique métier, cad dans notre cas, aller chercher les données dans la DB

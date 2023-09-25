@@ -12,6 +12,14 @@ MoviesController.get('/all', async (req, res) => {
   return res
 })
 
+MoviesController.get('/:id', async (req, res) => {
+  const id = Number(req.params.id)
+  const movie = await service.findById(id)
+  res.status(200)
+  res.json(movie)
+  return res
+})
+
 export { MoviesController }
 
 /*
