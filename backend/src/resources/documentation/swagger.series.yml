@@ -45,7 +45,7 @@ paths:
       tags: [Serie]
       parameters:
         - in: path
-          name: id
+          name: genre_id
           schema:
             type: integer
           required: true

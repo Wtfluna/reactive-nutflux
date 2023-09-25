@@ -45,4 +45,25 @@ export class SeriesService {
       )
     })
   }
+  findByGenreId(genreId: number): Promise<Serie> {
+    return new Promise((resolve, reject) => {
+      const connection = mysql.createConnection({
+        host: process.env.DATABASE_SERVER,
+        user: process.env.DATABASE_USERNAME,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_DATABASE
+      })
+      connection.query(
+        'SELECT * FROM series WHERE genre_id = ?',
+        [genreId],
+        (err, res) => {
+          if (err) {
+            reject(err)
+          } else {
+            resolve(res as unknown as Serie)
+          }
+        }
+      )
+    })
+  }
 }

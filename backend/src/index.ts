@@ -31,7 +31,7 @@ app.use(express.json())
 app.use(cors())
 
 /**
- * Toutes les routes CRUD pour les films seronts préfixées par `/movies`
+ * Toutes les routes CRUD pour les films seronts préfixées par `/movies` par ex
  */
 app.use('/movies', MoviesController)
 

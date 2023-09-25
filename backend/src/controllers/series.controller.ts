@@ -20,4 +20,12 @@ SeriesController.get('/:id', async (req, res) => {
   return res
 })
 
+SeriesController.get('/genre/:genre_id', async (req, res) => {
+  const genreId = Number(req.params.genre_id)
+  const series = await service.findByGenreId(genreId)
+  res.status(200)
+  res.json(series)
+  return res
+})
+
 export { SeriesController }
