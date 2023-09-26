@@ -14,7 +14,7 @@ $lavender: #9d94bf;
   z-index: 100;
   transition: all 0.3s ease-in-out;
 
-  .container {
+  &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,22 +23,22 @@ $lavender: #9d94bf;
     padding: 0 20px;
   }
 
-  .navbar-logo img {
+  &__logo img {
     width: auto;
     height: 48px;
   }
 
-  .navbar-links {
-    ul {
+  &__links {
+    & ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
       display: flex;
 
-      li {
+      & li {
         margin-right: 20px;
 
-        a {
+        & a {
           text-decoration: none;
           color: $light-grey;
           background-color: #9d94bfd3;
@@ -55,34 +55,6 @@ $lavender: #9d94bf;
             cursor: pointer;
           }
         }
-      }
-    }
-  }
-
-  .navbar-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: $light-grey;
-      margin: 3px 0;
-      transition: all 0.2s ease-in-out;
-    }
-
-    &.open {
-      transform: rotate(45deg);
-      background-color: transparent;
-
-      + .bar {
-        opacity: 0;
-      }
-
-      + .bar + .bar {
-        transform: rotate(-45deg);
-        margin-top: -2px;
       }
     }
   }

@@ -1,56 +1,56 @@
-import '../../scss/pages/all-profiles.scss';
+import '../../scss/pages/chooseProfile.scss';
 
-function ChooseProfile(){
+function ChooseProfile() {
 
-    return(
-      <div>
-    <header>
+  return (
+    <div>
+      <header>
         <div className="logo">
-          <a href="./Welcome.tsx"><img src="./assets/NUTFLUX.png"/></a>
+          <a href="./Welcome.tsx"><img src="./assets/NUTFLUX.png" /></a>
         </div>
       </header>
-      
-      <div className="list-profile">
-        
-         <h1 className="list-profile-title">Who's watching?</h1>
-        
-        <div className="card">
-         <div className="profile"> 
-             <img className="profile-img" src="./assets/avatars/ballow.png"/>
-         </div>
-         <p>1</p>
+
+      <div className="profile">
+
+        <h1 className="profile__title">Who's watching?</h1>
+
+        <div className="profile__card">
+          <div className="profile__user">
+            <img className="profile__img" src="./assets/avatars/ballow.png" />
+          </div>
+          <p>1</p>
         </div>
-        
-        <div className="card">
-         <div className="profile"> 
-            <img className="profile-img" src="./assets/avatars/barog.png"/>
-         </div>
-         <p>2</p>
+
+        <div className="profile__card">
+          <div className="profile__user">
+            <img className="profile__img" src="./assets/avatars/barog.png" />
+          </div>
+          <p>2</p>
         </div>
-        
-        <div className="card">
-         <div className="profile"> 
-            <img className="profile-img" src="./assets/avatars/unilloon.png"/>
-         </div>
-         <p>3</p>
+
+        <div className="profile__card">
+          <div className="profile__user">
+            <img className="profile__img" src="./assets/avatars/unilloon.png" />
+          </div>
+          <p>3</p>
         </div>
-        
-        <div className="card">
-         <div className="profile"> 
-            <img className="profile-img" src="./assets/avatars/ballox.png"/>
-         </div>
-         <p>4</p>
+
+        <div className="profile__card">
+          <div className="profile__user">
+            <img className="profile__img" src="./assets/avatars/ballox.png" />
+          </div>
+          <p>4</p>
         </div>
-        
-        
-        
-        <div className="profile-button">
+
+
+
+        <div className="profile__button">
           <button>Manage Profiles</button>
         </div>
 
       </div>
-</div>
-    )
+    </div>
+  )
 }
 
 export default ChooseProfile;

@@ -1,4 +1,12 @@
-//CHOOSE PROFILE
+import { useState } from "react";
+
+export default function App(){
+
+  const [usernameReg, setUsernameReg] = useState('')
+  const [passwordReg, setPasswordReg] = useState('')
+}
+
+/*/SLIDER CAROUSEL
 import Slider from "./components/pages/HomePage";
 
 export default function App(){
@@ -8,8 +16,8 @@ export default function App(){
    </>
  );
 }
-
-/*//CHOOSE PROFILE
+*/
+/*/CHOOSE PROFILE
 import ChooseProfile from "./components/pages/ChooseProfile";
 
 export default function App(){
@@ -20,7 +28,8 @@ export default function App(){
  );
 }
 */
-/*//SIGN UP 
+/*
+//SIGN UP 
  import Navbar from "./components/Navbar/Navbar";
  import SignUp from "./components/pages/SignUp";
  
@@ -32,21 +41,21 @@ export default function App(){
     </>
   );
  }
- */
-/*  
- //LOGIN 
+
+*/
+/*//LOGIN 
 import Navbar from "./components/Navbar/Navbar";
- import LogIn from "./components/pages/LogIn";
- 
- export default function App(){
+import LogIn from "./components/pages/LogIn";
+
+export default function App() {
   return (
     <>
       <Navbar />
-      <LogIn/>
+      <LogIn />
     </>
   );
- }
- */
+}
+
 /*
  //WELCOME PAGE
  import Navbar from "./components/Navbar/Navbar";

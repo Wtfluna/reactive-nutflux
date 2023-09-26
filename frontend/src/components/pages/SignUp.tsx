@@ -3,16 +3,25 @@ import '../../scss/pages/signup.scss';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [passwordReg, setPasswordReg] = useState('');
+  const [usernameReg, setUsernameReg] = useState('');
 
   return (
     <div className="signup">
-      <div className="signup-h">
+      <div className="signup__h">
         <h2>Sign Up</h2>
       </div>
 
-      <div className="signup-form">
+      <div className="signup__form">
 
+        <input
+          type="text" 
+          onChange={() => {setUsernameReg(e.target.value);
+          }}
+          placeholder="Username"
+          value={usernameReg}
+          required
+        />
         <input
           type="email"
           placeholder="Email"
@@ -21,17 +30,11 @@ export default function SignUp() {
           required
         />
         <input
-          type="email"
-          placeholder="Username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
           type="password"
+          onChange={() => {setPasswordReg(e.target.value);
+          }}
           placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
+          value={passwordReg}
           required
         />
         <p><a href="#">Choose an avatar</a></p>

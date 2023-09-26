@@ -8,21 +8,23 @@ export default function LogIn() {
   return (
 
     <div className="login">
-     <div className="login-h">
+      <div className="login__h">
         <h3>Welcome back!</h3>
       </div>
-      <div className="login-form">
+      <div className="login__form">
         <input
           type="text"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          required
         />
         <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          required
         />
         <button role='button' type="submit">Login to your account</button>
       </div>

@@ -1,7 +1,7 @@
 $light-grey: #e8e8e8;
 $lavender: #9d94bf;
 
-.welcome-banner {
+.welcome__banner {
   width: auto;
   padding: 32px 0;
   margin: 0;
@@ -15,49 +15,49 @@ $lavender: #9d94bf;
   background-size: cover;
   height: 460px;
 
-  & .intro-h {
+  &__h {
     padding-top: 7rem;
     font-weight: 900;
     font-size: 2.5rem;
     text-shadow: rgb(0, 0, 0) 5px 0 10px;
   }
-  & .intro-p {
+  &__p {
     font-weight: 900;
     font-size: 1.2rem;
     text-shadow: rgb(0, 0, 0) 5px 0 10px;
   }
-}
-.intro-form {
-  font-weight: 900;
-  text-align: center;
+  &__form {
+    font-weight: 900;
+    text-align: center;
 
-  & input {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.63);
-    border: transparent;
-    border-radius: 2px;
-    padding: 1rem;
-    font-size: 1rem;
-    font-family: "Montserrat", sans-serif;
-  }
-  & button {
-    color: $light-grey;
-    background-color: #9d94bfec;
-    border: transparent;
-    border-radius: 2px;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: "Montserrat", sans-serif;
-
-    & a{
-      text-decoration: none;
-      color: $light-grey;
+    & input {
+      color: rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0.63);
+      border: transparent;
+      border-radius: 2px;
+      padding: 1rem;
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
     }
-    &:hover {
-      background-color: $lavender;
-      transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-      cursor: pointer;
+    & button {
+      color: $light-grey;
+      background-color: #9d94bfec;
+      border: transparent;
+      border-radius: 2px;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+
+      & a{
+        text-decoration: none;
+        color: $light-grey;
+      }
+      &:hover {
+        background-color: $lavender;
+        transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+        cursor: pointer;
+      }
     }
   }
 }
@@ -69,21 +69,21 @@ $lavender: #9d94bf;
   text-align: left;
   padding: 80px;
 
-  & .screens-h {
-    font-weight: 900;
-    font-size: 2.5rem;
+    &__h {
+      font-weight: 900;
+      font-size: 2.5rem;
+    }
+    &__p {
+      font-weight: 400;
+      font-size: 1.2rem;
 
+    }
+    &__img {
+      height: 450px;
+      width: auto;
+    }
   }
-  & .screens-p {
-    font-weight: 400;
-    font-size: 1.2rem;
 
-  }
-  & .screens-img {
-    height: 450px;
-    width: auto;
-  }
-}
 /*Media queries for mobile and tablet
 @media (max-width: 768px) {
   .intro {
