@@ -1,10 +1,18 @@
 import { useState } from "react";
+import Axios from 'axios';
 import '../../scss/pages/signup.scss';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
   const [passwordReg, setPasswordReg] = useState('');
   const [usernameReg, setUsernameReg] = useState('');
+
+  const Register =() => {
+    Axios.post('http://localhost3001/register', {username: usernameReg, email: email, password: passwordReg})
+    .then((response) => {
+      console.log(response);
+    });
+  };
 
   return (
     <div className="signup">
@@ -16,7 +24,7 @@ export default function SignUp() {
 
         <input
           type="text" 
-          onChange={() => {setUsernameReg(e.target.value);
+          onChange={(e) => {setUsernameReg(e.target.value);
           }}
           placeholder="Username"
           value={usernameReg}
@@ -26,19 +34,20 @@ export default function SignUp() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {setEmail(e.target.value);
+          }}
           required
         />
         <input
           type="password"
-          onChange={() => {setPasswordReg(e.target.value);
+          onChange={(e) => {setPasswordReg(e.target.value);
           }}
           placeholder="Password"
           value={passwordReg}
           required
         />
         <p><a href="#">Choose an avatar</a></p>
-        <button role="button" type="submit">Sign Up</button>
+        <button onClick={register} role="button" type="submit">Sign Up</button>
       </div>
     </div>
   );

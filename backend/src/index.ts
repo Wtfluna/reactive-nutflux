@@ -69,5 +69,25 @@ const db = mysql.createConnection({
 });
 
 app.post('/register', (req, res)=> {
-  db.query("INSERT INTO accounts")
-})
+
+  const username = req.body.username
+  const username = req.body.email
+  const username = req.body.password
+  db.query("INSERT INTO accounts (username, email, password) VALUES (?, ?, ?)", [username, email, password], 
+  (err, result)=> {
+    console.log(err);
+  }
+  );
+});
+
+app.post('/login', (req, res)=> {
+  const username = req.body.username
+  const username = req.body.email
+  const username = req.body.password
+  "SELECT * FROM accounts WHERE username = ? AND email = ? AND password= ?"
+  [username, email, password], 
+  (err, result)=> {
+    console.log(err);
+  }
+  );
+
