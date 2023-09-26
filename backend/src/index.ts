@@ -13,9 +13,8 @@ import { DirectorsController } from './controllers/directors.controller'
 import { ActorsController } from './controllers/actors.controller'
 // import { RegisterController } from './controllers/register.controller'
 
-/**
- * On créé une nouvelle "application" express
- */
+// On créé une nouvelle "application" express
+
 const app = express()
 
 /**
@@ -25,15 +24,12 @@ const app = express()
  */
 app.use(express.json())
 
-/**
- * On dit à Express que l'on souhaite autoriser tous les noms de domaines
- * à faire des requêtes sur notre API.
- */
+// On dit à Express que l'on souhaite autoriser tous les noms de domaines à faire des requêtes sur notre API.3
+
 app.use(cors())
 
-/**
- * Toutes les routes CRUD pour les films seronts préfixées par `/movies` par ex
- */
+// Toutes les routes CRUD pour les films seronts préfixées par `/movies` par ex
+
 app.use('/movies', MoviesController)
 
 app.use('/series', SeriesController)
@@ -46,28 +42,25 @@ app.use('/actors', ActorsController)
 
 // app.use('/register', RegisterController)
 
-/**
+/*
  * Swagger (pour voir le contrat de l'API)
  * http://localhost:3000/api-docs/
  */
+
 app.use(
   '/api-docs',
   swaggerUi.serve,
   swaggerUi.setup(swaggerJsdoc(options), { explorer: true })
 )
 
-/**
- * Pour toutes les autres routes non définies, on retourne une erreur
- */
+// Pour toutes les autres routes non définies, on retourne une erreur
+
 app.all('*', UnknownRoutesHandler)
 
-/**
- * Gestion des erreurs
- * /!\ Cela doit être le dernier `app.use`
- */
+// Gestion des erreurs /!\ Cela doit être le dernier `app.use`
+
 app.use(ExceptionsHandler)
 
-/**
- * On demande à Express d'ecouter les requêtes sur le port défini dans la config
- */
+// On demande à Express d'ecouter les requêtes sur le port défini dans la config
+
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
