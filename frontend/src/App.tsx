@@ -1,4 +1,3 @@
-
 /*/SLIDER CAROUSEL
 import Slider from "./components/pages/HomePage";
 
@@ -86,218 +85,19 @@ function App() {
     poster:
       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
   };
-<<<<<<< HEAD
-  // const movies: Movie[] = [
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Reservoir Dogs",
-  //     duration: "01:39:00",
-  //     release_date: 1992,
-  //     summary:
-  //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-  //     director_id: 1,
-  //     genre_id: 11,
-  //     pegi: 18,
-  //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-  //     poster:
-  //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-  //   },
-=======
- const movies: Movie[] = [
-    {
-      id: 1,
-      title: "Reservoir Dogs",
-      duration: "01:39:00",
-      release_date: 1992,
-      summary:
-        "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-      director_id: 1,
-      genre_id: 11,
-      pegi: 18,
-      trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    },
-    //   {
-    //     id: 1,
-    //     title: "Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs Reservoir Dogs",
-    //     duration: "01:39:00",
-    //     release_date: 1992,
-    //     summary:
-    //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-    //     director_id: 1,
-    //     genre_id: 11,
-    //     pegi: 18,
-    //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-    //     poster:
-    //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    //   },
-    //   {
-    //     id: 1,
-    //     title: "Reservoir Dogs",
-    //     duration: "01:39:00",
-    //     release_date: 1992,
-    //     summary:
-    //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-    //     director_id: 1,
-    //     genre_id: 11,
-    //     pegi: 18,
-    //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-    //     poster:
-    //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    //   },
-    //   {
-    //     id: 1,
-    //     title: "Reservoir Dogs",
-    //     duration: "01:39:00",
-    //     release_date: 1992,
-    //     summary:
-    //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-    //     director_id: 1,
-    //     genre_id: 11,
-    //     pegi: 18,
-    //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-    //     poster:
-    //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    //   },
-    //   {
-    //     id: 1,
-    //     title: "Reservoir Dogs",
-    //     duration: "01:39:00",
-    //     release_date: 1992,
-    //     summary:
-    //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-    //     director_id: 1,
-    //     genre_id: 11,
-    //     pegi: 18,
-    //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-    //     poster:
-    //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    //   },
-    //   {
-    //     id: 1,
-    //     title: "Reservoir Dogs",
-    //     duration: "01:39:00",
-    //     release_date: 1992,
-    //     summary:
-    //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-    //     director_id: 1,
-    //     genre_id: 11,
-    //     pegi: 18,
-    //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-    //     poster:
-    //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    //   },
-    //   {
-    //     id: 1,
-    //     title: "Reservoir Dogs",
-    //     duration: "01:39:00",
-    //     release_date: 1992,
-    //     summary:
-    //       "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-    //     director_id: 1,
-    //     genre_id: 11,
-    //     pegi: 18,
-    //     trailer: "https://www.youtube.com/watch?v=GLPJSmUHZvU",
-    //     poster:
-    //       "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    //   },
   ];
->>>>>>> d95ae7be2dd64a742bb24c8d4f0e789e5b0b7e15
 
   return (
     <>
       <h1> Mon super titre</h1>
-      {/* <Header /> */}
+      <Header />
       <MoviePage movie={movie}></MoviePage>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
 
 export default App;
 */
+
+const axios = require("axios").default;
