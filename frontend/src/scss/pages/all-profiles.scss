@@ -82,7 +82,7 @@ button:hover{
     color: #fff;
 }
 
-@media screen and (max-width:520px) {
+/*@media screen and (max-width:520px) {
 
    .card{
      display: table;
@@ -93,4 +93,43 @@ button:hover{
     margin-left: auto;
   }
   
+  }
+  */
+  /* Media query*/
+@media (max-width: 768px) {
+    .logo {
+      margin-top: 15px;
+  
+      & img {
+        height: 36px;
+      }
+    }
+  
+    header {
+      margin-bottom: 50px;
+    }
+  
+    .list-profile-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  
+    .profile {
+      width: 150px;
+    }
+  
+    p {
+      font-size: 0.8em;
+    }
+  
+    .card {
+      display: block;
+      margin: 10px auto;
+    }
+  
+    button {
+      margin-top: 20px;
+      width: 120px;
+      height: 36px;
+    }
   }

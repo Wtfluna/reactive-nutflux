@@ -1,4 +1,15 @@
 //CHOOSE PROFILE
+import Slider from "./components/pages/HomePage";
+
+export default function App(){
+ return (
+   <>
+     <Slider/>
+   </>
+ );
+}
+
+/*//CHOOSE PROFILE
 import ChooseProfile from "./components/pages/ChooseProfile";
 
 export default function App(){
@@ -8,7 +19,7 @@ export default function App(){
    </>
  );
 }
-
+*/
 /*//SIGN UP 
  import Navbar from "./components/Navbar/Navbar";
  import SignUp from "./components/pages/SignUp";
