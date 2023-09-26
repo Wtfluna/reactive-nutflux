@@ -1,10 +1,3 @@
-import { useState } from "react";
-
-export default function App(){
-
-  const [usernameReg, setUsernameReg] = useState('')
-  const [passwordReg, setPasswordReg] = useState('')
-}
 
 /*/SLIDER CAROUSEL
 import Slider from "./components/pages/HomePage";
