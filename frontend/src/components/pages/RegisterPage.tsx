@@ -1,10 +1,10 @@
 import { useState } from "react";
-import '../../scss/pages/signup.scss';
+import "../../scss/pages/signup.scss";
 
-export default function SignUp() {
-  const [email, setEmail] = useState('');
-  const [passwordReg, setPasswordReg] = useState('');
-  const [usernameReg, setUsernameReg] = useState('');
+export default function RegisterPage() {
+  const [email, setEmail] = useState("");
+  const [passwordReg, setPasswordReg] = useState("");
+  const [usernameReg, setUsernameReg] = useState("");
 
   return (
     <div className="signup">
@@ -13,10 +13,10 @@ export default function SignUp() {
       </div>
 
       <div className="signup__form">
-
         <input
-          type="text" 
-          onChange={() => {setUsernameReg(e.target.value);
+          type="text"
+          onChange={() => {
+            setUsernameReg(e.target.value);
           }}
           placeholder="Username"
           value={usernameReg}
@@ -31,14 +31,19 @@ export default function SignUp() {
         />
         <input
           type="password"
-          onChange={() => {setPasswordReg(e.target.value);
+          onChange={() => {
+            setPasswordReg(e.target.value);
           }}
           placeholder="Password"
           value={passwordReg}
           required
         />
-        <p><a href="#">Choose an avatar</a></p>
-        <button role="button" type="submit">Sign Up</button>
+        <p>
+          <a href="#">Choose an avatar</a>
+        </p>
+        <button role="button" type="submit">
+          Sign Up
+        </button>
       </div>
     </div>
   );

@@ -1,6 +1,19 @@
-import Movie from "../types/movie";
+import Movie from "../../types/movie";
+import { useLoaderData } from "react-router-dom";
+import axios from "axios";
 
-function MoviePage({ movie }: { movie: Movie }) {
+export async function loader({ params }) {
+  const movie = await getMovie(params.movieId);
+  return { movie };
+}
+
+async function getMovie(id: number): Promise<Movie> {
+  const response = await axios.get(`http://localhost:3000/movies/${id}`);
+  return response.data[0] as Movie;
+}
+
+function MoviePage() {
+  const { movie } = useLoaderData();
   return (
     <article className="movie_sheet">
       <h2 className="movie_sheet__title">{movie.title}</h2>

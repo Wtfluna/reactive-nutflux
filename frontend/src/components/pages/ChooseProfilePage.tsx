@@ -1,17 +1,17 @@
-import '../../scss/pages/chooseProfile.scss';
+import "../../scss/pages/chooseProfile.scss";
 
-function ChooseProfile() {
-
+function ChooseProfilePage() {
   return (
     <div>
       <header>
         <div className="logo">
-          <a href="./Welcome.tsx"><img src="./assets/NUTFLUX.png" /></a>
+          <a href="./Welcome.tsx">
+            <img src="./assets/NUTFLUX.png" />
+          </a>
         </div>
       </header>
 
       <div className="profile">
-
         <h1 className="profile__title">Who's watching?</h1>
 
         <div className="profile__card">
@@ -42,15 +42,12 @@ function ChooseProfile() {
           <p>4</p>
         </div>
 
-
-
         <div className="profile__button">
           <button>Manage Profiles</button>
         </div>
-
       </div>
     </div>
-  )
+  );
 }
 
-export default ChooseProfile;
+export default ChooseProfilePage;
