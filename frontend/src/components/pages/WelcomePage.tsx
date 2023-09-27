@@ -11,8 +11,7 @@ export default function WelcomePage() {
         <div className="intro__form">
           <input type="email" placeholder="Email address" name="email" />
           <button role="button" type="submit">
-            <a href="./SignUp.tsx">Sign Up</a>
-            {/* TODO: changer a href par linkto */}
+            <a href="/register">Sign Up</a>
           </button>
         </div>
       </div>

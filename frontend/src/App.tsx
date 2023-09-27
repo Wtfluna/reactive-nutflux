@@ -11,7 +11,7 @@ export default function App(){
  );
 }
 
-/*/CHOOSE PROFILE
+/*CHOOSE PROFILE
 import ChooseProfile from "./components/pages/ChooseProfile";
 
 export default function App(){
@@ -53,6 +53,7 @@ export default function App() {
 // WELCOME PAGE
 import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
+import RegisterPage from "./components/pages/RegisterPage";
 import LoginPage from "./components/pages/LoginPage";
 import MoviePage, { loader as movieLoader } from "./components/pages/MoviePage";
 
@@ -62,6 +63,14 @@ const router = createBrowserRouter([
     element: (
       <>
         <WelcomePage />
+      </>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <>
+        <RegisterPage />
       </>
     ),
   },
@@ -133,3 +142,4 @@ export default App;
 */
 
 // const axios = require("axios").default;
+// auth controller et webtokens json pour login

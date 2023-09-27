@@ -30,7 +30,7 @@ export default function LoginPage() {
         </button>
       </div>
       <p>
-        Don't have an account? <a href="./SignUp.tsx">Sign up now!</a>
+        Don't have an account? <a href="/register">Register now!</a>
       </p>
     </div>
   );

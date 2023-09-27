@@ -1,5 +1,62 @@
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+button {
+  margin-top: 1.5rem;
+}
+
+.instructions {
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: #9d94bfc0;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: white;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}
+
 .signup {
-  margin: 0 auto; 
+  box-sizing: border-box;
+  margin: 0 auto;
   padding: 60px;
   max-width: fit-content;
   text-align: center;
@@ -8,6 +65,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: "Montserrat", sans-serif;
 
   &__h {
     font-weight: 900;
@@ -18,7 +76,6 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
 
     & input {
       color: rgb(255, 255, 255);
@@ -57,5 +114,8 @@
       transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
       cursor: pointer;
     }
+  }
+  svg{
+    padding-bottom: 10px;
   }
 }
