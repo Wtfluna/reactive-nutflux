@@ -1,4 +1,6 @@
-//SLIDER CAROUSEL
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+/*/SLIDER CAROUSEL
 import Slider from "./components/pages/HomePage";
 
 export default function App(){
@@ -47,23 +49,53 @@ export default function App() {
     </>
   );
 }
+*/
+// WELCOME PAGE
+import Navbar from "./components/layout/Navbar";
+import WelcomePage from "./components/pages/WelcomePage";
+import LoginPage from "./components/pages/LoginPage";
+import MoviePage, { loader as movieLoader } from "./components/pages/MoviePage";
 
-/*
- //WELCOME PAGE
- import Navbar from "./components/Navbar/Navbar";
- import Welcome from "./components/pages/Welcome";
- 
- export default function App(){
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <WelcomePage />
+      </>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <>
+        <LoginPage />
+      </>
+    ),
+  },
+  {
+    path: "/movie/:movieId",
+    element: (
+      <>
+        <MoviePage />
+      </>
+    ),
+    loader: movieLoader,
+  },
+]);
+
+export default function App() {
   return (
     <>
       <Navbar />
-      <Welcome />
+      <RouterProvider router={router} />
+      {/* TODO: ajouter footer quand il sera prêt */}
     </>
   );
- }
+}
 
- //APP
- /*import MoviePage from "./components/MoviePage";
+//APP
+/*import MoviePage from "./components/MoviePage";
 import Movie from "./types/movie";
 
 function App() {
@@ -99,3 +131,5 @@ function App() {
 
 export default App;
 */
+
+// const axios = require("axios").default;

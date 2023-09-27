@@ -1,12 +1,11 @@
 import { useState } from "react";
-import '../../scss/pages/login.scss';
+import "../../scss/pages/login.scss";
 
-export default function LogIn() {
+export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-
     <div className="login">
       <div className="login__h">
         <h3>Welcome back!</h3>
@@ -26,11 +25,15 @@ export default function LogIn() {
           value={password}
           required
         />
-        <button role='button' type="submit">Login to your account</button>
+        <button role="button" type="submit">
+          Login to your account
+        </button>
       </div>
-      <p>Don't have an account? <a href="./SignUp.tsx">Sign up now!</a></p>
+      <p>
+        Don't have an account? <a href="./SignUp.tsx">Sign up now!</a>
+      </p>
     </div>
-
   );
-}   /* 
-      */
+}
+/*
+ */
