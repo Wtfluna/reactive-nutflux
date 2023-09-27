@@ -1,4 +1,75 @@
-import { useState } from "react";
+
+import '../../scss/pages/signup.scss';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+
+function RegistrationForm() {
+  const [formData, setFormData] = useState<{
+    username: string;
+    email: string;
+    password: string;
+  }>({
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  const history = useHistory();
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('/api/register', formData);
+      // Redirect to ChooseProfile page upon successful registration
+      history.push('/ChooseProfile');
+    } catch (error) {
+      console.error(error);
+      // Handle registration failure
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={formData.username}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <button type="submit">Sign up</button>
+    </form>
+  );
+}
+
+export default RegistrationForm;
+
+
+/*import { useState } from "react";
 import Axios from 'axios';
 import '../../scss/pages/signup.scss';
 
@@ -52,3 +123,4 @@ export default function SignUp() {
     </div>
   );
 }
+*/

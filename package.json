@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "react-axios": "^2.0.6"
+    "react-axios": "^2.0.6",
+    "react-router-dom": "^6.16.0"
   }
 }

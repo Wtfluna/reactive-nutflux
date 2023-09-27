@@ -1,0 +1,47 @@
+tags:
+  name: Actor
+  description: The actor's managing API
+
+# --- Routes
+paths:
+  /actors/{id}:
+    get:
+      summary: Get an actor by ID
+      tags: [Actor]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the actor to get
+      responses:
+        200:
+          description: The requested actor.
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Actor'
+        404:
+          description: Actor not found
+
+# --- Types
+components:
+  schemas:
+    Actor:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated id of an actor
+        firstname:
+          type: string
+          description: The actor's firstname
+        lastname:
+          type: string
+          description: The actor's lastname
+      example:
+        id: 1
+        firstname: John
+        lastname: Travolta

@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
 import '../../scss/pages/homepage.scss';
 
+
+import React, { useEffect, useState, useRef } from 'react';
 interface Movie {
   Poster: string;
 }

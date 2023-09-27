@@ -1,0 +1,132 @@
+tags:
+  name: Serie
+  description: The serie's managing API
+
+# --- Routes
+paths:
+  /series/all:
+    get:
+      summary: Retrieve serie's list
+      tags: [Serie]
+      responses:
+        200:
+          description: The series' list.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Serie'
+        404:
+          description: Not found
+  /series/{id}:
+    get:
+      summary: Retrieve one serie
+      tags: [Serie]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the serie to get
+      responses:
+        200:
+          description: The requested serie.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Serie'
+        404:
+          description: Serie's not found
+  /series/genre/{genre_id}:
+    get:
+      summary: Retrieve series by genre
+      tags: [Serie]
+      parameters:
+        - in: path
+          name: genre_id
+          schema:
+            type: integer
+          required: true
+          description: Genre ID for which to retrieve the series
+      responses:
+        200:
+          description: A list of series sort by genre.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Serie'
+        500:
+          description: Internal server error
+  /series/list/{list_id}:
+    get:
+      summary: Get a list of series by list ID
+      tags: [Serie]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: List ID for which to retrieve the series
+      responses:
+        200:
+          description: Success - Series list found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Serie'
+        404:
+          description: Series list not found
+
+# --- Types
+components:
+  schemas:
+    Serie:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated id of a serie
+        title:
+          type: string
+          description: The title of the serie
+        duration:
+          type: time
+          description: The duration of a serie
+        release_date:
+          type: number
+          format: date
+          description: The year the serie was released
+        summary:
+          type: string
+          description: The summary of a serie
+        director_id:
+          type: number
+          description: The auto-generated id of a director
+        genre_id:
+          type: number
+          description: The auto_generated id of a genre
+        pegi:
+          type: number
+          description: The age limit to see a serie
+        trailer:
+          type: string
+          description: A YouTube link to the trailer of a serie
+        poster:
+          type: string
+          description: A link to the poster of a serie
+      example:
+        id: 1
+        title: Breaking Bad
+        duration: 00:49:00
+        release_date: 2008
+        summary: A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine to secure his family's future.
+        director_id: 2
+        genre_id: 11
+        pegi: 17
+        trailer: https://www.youtube.com/watch?v=ceqOTZnhgY8
+        poster: https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg

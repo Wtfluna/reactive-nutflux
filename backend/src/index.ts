@@ -3,10 +3,15 @@ import express from 'express'
 import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 import { config } from '~/config'
-import { PetsController } from '~/resources/pets/pets.controller'
+import { options } from './open-api-options'
 import { ExceptionsHandler } from '~/middlewares/exceptions.handler'
 import { UnknownRoutesHandler } from '~/middlewares/unknownRoutes.handler'
-import { options } from './open-api-options'
+import { MoviesController } from './controllers/movies.controller'
+import { SeriesController } from './controllers/series.controller'
+import { GenresController } from './controllers/genres.controller'
+import { DirectorsController } from './controllers/directors.controller'
+import { ActorsController } from './controllers/actors.controller'
+// import { RegisterController } from './controllers/register.controller'
 
 /**
  * On créé une nouvelle "application" express
@@ -27,12 +32,23 @@ app.use(express.json())
 app.use(cors())
 
 /**
- * Toutes les routes CRUD pour les animaux seronts préfixées par `/pets`
+ * Toutes les routes CRUD pour les films seronts préfixées par `/movies` par ex
  */
-app.use('/pets', PetsController)
+app.use('/movies', MoviesController)
+
+app.use('/series', SeriesController)
+
+app.use('/genres', GenresController)
+
+app.use('/directors', DirectorsController)
+
+app.use('/actors', ActorsController)
+
+// app.use('/register', RegisterController)
 
 /**
  * Swagger (pour voir le contrat de l'API)
+ * http://localhost:3000/api-docs/
  */
 app.use(
   '/api-docs',
@@ -57,37 +73,3 @@ app.use(ExceptionsHandler)
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
 
 // http://localhost:3000/api-docs/
-
-// Ajout const db pour gérer register + login
-const mysql = require ("mysql");
-const db = mysql.createConnection({
-
-  user: "root",
-  host: "localhost",
-  password: "password",
-  database: "LoginSystem",
-});
-
-app.post('/register', (req, res)=> {
-
-  const username = req.body.username
-  const username = req.body.email
-  const username = req.body.password
-  db.query("INSERT INTO accounts (username, email, password) VALUES (?, ?, ?)", [username, email, password], 
-  (err, result)=> {
-    console.log(err);
-  }
-  );
-});
-
-app.post('/login', (req, res)=> {
-  const username = req.body.username
-  const username = req.body.email
-  const username = req.body.password
-  "SELECT * FROM accounts WHERE username = ? AND email = ? AND password= ?"
-  [username, email, password], 
-  (err, result)=> {
-    console.log(err);
-  }
-  );
-

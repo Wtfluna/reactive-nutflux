@@ -26,5 +26,5 @@ export const options = {
       }
     ]
   },
-  apis: ['./src/resources/.documentation/*']
+  apis: ['./src/resources/documentation/*']
 }

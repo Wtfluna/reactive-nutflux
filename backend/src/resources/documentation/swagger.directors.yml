@@ -1,0 +1,47 @@
+tags:
+  name: Director
+  description: The director's managing API
+
+# --- Routes
+paths:
+  /directors/{id}:
+    get:
+      summary: Get a director by ID
+      tags: [Director]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the director to get
+      responses:
+        200:
+          description: The requested director.
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Director'
+        404:
+          description: Director not found
+
+# --- Types
+components:
+  schemas:
+    Director:
+      type: object
+      properties:
+        id:
+          type: number
+          description: The auto-generated id of a director
+        firstname:
+          type: string
+          description: The director's firstname
+        lastname:
+          type: string
+          description: The director's lastname
+      example:
+        id: 1
+        firstname: Quentin
+        lastname: Tarantino
