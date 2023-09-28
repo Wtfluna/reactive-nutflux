@@ -1,10 +1,21 @@
-import "../../scss/pages/chooseProfile.scss";
+import User from "../../types/user";
+import axios from "axios";
+
+export async function loader({ params }) {
+  const user = await getUser(params.userId);
+  return { user };
+}
+
+async function getUser(id: number): Promise<User> {
+  const response = await axios.get(`http://localhost:3000/user/${id}`);
+  return response.data[0] as User;
+}
 
 function ChooseProfilePage() {
   return (
     <div>
-      <header>
-        <div className="logo">
+      <header className="header">
+        <div className="header__logo">
           <a href="./Welcome.tsx">
             <img src="./assets/NUTFLUX.png" />
           </a>

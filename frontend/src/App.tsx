@@ -55,6 +55,15 @@ import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
 import LoginPage from "./components/pages/LoginPage";
 import MoviePage, { loader as movieLoader } from "./components/pages/MoviePage";
+import SeriePage, {
+  loader as serieLoader,
+} from "./components/pages/SeriesPage";
+import ChooseProfilePage, {
+  loader as usersLoader,
+} from "./components/pages/ChooseProfilePage";
+// import MoviesListPage, {
+//   loader as moviesListLoader,
+// } from "./components/pages/MoviesListPage";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +83,24 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/user/:userId",
+    element: (
+      <>
+        <ChooseProfilePage />
+      </>
+    ),
+    loader: usersLoader,
+  },
+  // {
+  //   path: "/movies",
+  //   element: (
+  //     <>
+  //       <MoviesListPage />
+  //     </>
+  //   ),
+  //   loader: moviesListLoader,
+  // },
+  {
     path: "/movie/:movieId",
     element: (
       <>
@@ -81,6 +108,16 @@ const router = createBrowserRouter([
       </>
     ),
     loader: movieLoader,
+  },
+
+  {
+    path: "/serie/:serieId",
+    element: (
+      <>
+        <SeriePage />
+      </>
+    ),
+    loader: serieLoader,
   },
 ]);
 

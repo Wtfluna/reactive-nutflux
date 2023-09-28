@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../../scss/pages/signup.scss";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");

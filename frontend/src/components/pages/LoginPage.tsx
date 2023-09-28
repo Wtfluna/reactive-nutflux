@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../../scss/pages/login.scss";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

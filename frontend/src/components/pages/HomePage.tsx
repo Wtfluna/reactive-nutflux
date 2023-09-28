@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
-import '../../scss/pages/homepage.scss';
+import React, { useEffect, useState, useRef } from "react";
 
 interface Movie {
   Poster: string;
@@ -19,15 +18,20 @@ function Slider() {
 
   const sliderScrollRight = () => {
     if (slidersRef.current) {
-      const maxScrollAmount = slidersRef.current.scrollWidth - slidersRef.current.clientWidth;
+      const maxScrollAmount =
+        slidersRef.current.scrollWidth - slidersRef.current.clientWidth;
       const newScrollAmount = scrollAmount + scrollPerClick;
-      setScrollAmount(newScrollAmount <= maxScrollAmount ? newScrollAmount : maxScrollAmount);
+      setScrollAmount(
+        newScrollAmount <= maxScrollAmount ? newScrollAmount : maxScrollAmount
+      );
     }
   };
 
   const showMovieData = async () => {
     try {
-      const res = await fetch('https://www.omdbapi.com/?s=Batman&apikey=21f0594b&plot=full');
+      const res = await fetch(
+        "https://www.omdbapi.com/?s=Batman&apikey=21f0594b&plot=full"
+      );
       const json = await res.json();
       const fetchedMovies: Movie[] = json.Search || [];
       setMovies(fetchedMovies);
@@ -41,7 +45,7 @@ function Slider() {
   }, []);
 
   useEffect(() => {
-    setScrollPerClick(400); 
+    setScrollPerClick(400);
   }, []);
 
   useEffect(() => {
@@ -49,7 +53,7 @@ function Slider() {
       slidersRef.current.scrollTo({
         top: 0,
         left: scrollAmount,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   }, [scrollAmount]);
@@ -57,13 +61,28 @@ function Slider() {
   return (
     <div className="NetflixSlider">
       <div className="carousel">
-        <div className="carousel-box" ref={slidersRef}>
+        <div className="carousel__box" ref={slidersRef}>
           {movies.map((el, index) => (
-            <img key={index} className={`img-${index} slider-img`} src={el.Poster} alt="" />
+            <img
+              key={index}
+              className={`img-${index} slider-img`}
+              src={el.Poster}
+              alt=""
+            />
           ))}
         </div>
-        <button className="switch-left slider-button" onClick={sliderScrollLeft}>&lt;</button>
-        <button className="switch-right slider-button" onClick={sliderScrollRight}>&gt;</button>
+        <button
+          className="switch-left-slider-button"
+          onClick={sliderScrollLeft}
+        >
+          &lt;
+        </button>
+        <button
+          className="switch-right-slider-button"
+          onClick={sliderScrollRight}
+        >
+          &gt;
+        </button>
       </div>
     </div>
   );

@@ -1,10 +1,8 @@
-$navbar-background-color: #1d1d1dc2;
-$light-grey: #e8e8e8;
-$lavender: #9d94bf;
+@use "../base/variables";
 
 .navbar {
-  background-color: $navbar-background-color;
-  color: $light-grey;
+  background-color: #1d1d1d;
+  color: variables.$light-grey;
   height: 48px;
   padding: 10px 0;
   position: fixed;
@@ -23,25 +21,26 @@ $lavender: #9d94bf;
     padding: 0 20px;
   }
 
-  &__logo img {
-    width: auto;
-    height: 48px;
+  &__logo {
+    img {
+      width: auto;
+      height: 48px;
+    }
   }
-
   &__links {
-    & ul {
+    ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
       display: flex;
 
-      & li {
+      li {
         margin-right: 20px;
 
-        & a {
+        a {
           text-decoration: none;
-          color: $light-grey;
-          background-color: #9d94bfd3;
+          color: #e8e8e8;
+          background-color: #9d94bf;
           border: transparent;
           border-radius: 2px;
           padding: 0.6rem;
@@ -50,7 +49,7 @@ $lavender: #9d94bf;
           font-family: "Montserrat", sans-serif;
 
           &:hover {
-            background-color: $lavender;
+            background-color: #9d94bf;
             transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
             cursor: pointer;
           }

@@ -1,18 +1,21 @@
-header {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
 
-  & .logo {
-    margin-top: 25px;
+div {
+  .header {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
 
-    & img {
-      height: 48px;
+    &__logo {
+      margin-top: 25px;
+
+      .img {
+        height: 48px;
+      }
     }
   }
 }
-
 .profile {
   margin: auto;
   display: table;
@@ -36,9 +39,9 @@ header {
     border: 2px solid #151415;
   }
 
-  & p {
+  p {
     color: #fff;
-    font-family: sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 
   &__card {
@@ -60,18 +63,14 @@ header {
     border-radius: 5px;
   }
 
-  & button {
+  &__button {
     margin-top: 40px;
     color: gray;
-    background-color: #151415;
+    background-color: rgba(0, 0, 0, 0.63);
     border: 2px solid gray;
     width: 150px;
     height: 40px;
     font-family: "Montserrat", sans-serif;
-  }
-
-  &__button {
-    margin: auto;
     display: table;
   }
 
