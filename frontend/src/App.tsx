@@ -54,16 +54,20 @@ export default function App() {
 import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
 import LoginPage from "./components/pages/LoginPage";
-import MoviePage, { loader as movieLoader } from "./components/pages/MoviePage";
-import SeriePage, {
-  loader as serieLoader,
-} from "./components/pages/SeriesPage";
+
 import ChooseProfilePage, {
   loader as usersLoader,
 } from "./components/pages/ChooseProfilePage";
+
+import MoviePage, { loader as movieLoader } from "./components/pages/MoviePage";
+
 import MoviesListPage, {
   loader as moviesListLoader,
 } from "./components/pages/MoviesListPage";
+
+import SeriePage, {
+  loader as serieLoader,
+} from "./components/pages/SeriesPage";
 
 const router = createBrowserRouter([
   {
@@ -170,3 +174,10 @@ export default App;
 */
 
 // const axios = require("axios").default;
+
+// TODO: c'était pour l'exemple, ça ira dans une autre page
+// await axios.post("http://localhost:3000/register", {
+//   username: "Fred",
+//   email: "Pierrafeu",
+//   password: "",
+// });

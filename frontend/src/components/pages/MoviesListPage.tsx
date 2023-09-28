@@ -1,22 +1,25 @@
-import Movie from "../../types/movie";
 import { useLoaderData } from "react-router-dom";
+import Movie from "../../types/movie";
 import axios from "axios";
 
 export async function loader() {
   const movies = await getMovies();
-  return { movies };
+  return movies;
 }
 
 async function getMovies(): Promise<Movie[]> {
+  // TODO mettre dans .env (API_URL)
   const response = await axios.get("http://localhost:3000/movies/all");
-  // TODO mettre dans .env
   return response.data as Movie[];
 }
 
 //TODO: make it pretty and shine bright like a diamond, merci d'avance Clara et un coeur sur toi
 
 function MoviesListPage() {
-  const { movies } = useLoaderData();
+  // State
+  const movies = useLoaderData() as Movie[];
+
+  // Render
   return (
     <div className="moviesList">
       <ul>
