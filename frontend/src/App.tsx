@@ -61,9 +61,9 @@ import SeriePage, {
 import ChooseProfilePage, {
   loader as usersLoader,
 } from "./components/pages/ChooseProfilePage";
-// import MoviesListPage, {
-//   loader as moviesListLoader,
-// } from "./components/pages/MoviesListPage";
+import MoviesListPage, {
+  loader as moviesListLoader,
+} from "./components/pages/MoviesListPage";
 
 const router = createBrowserRouter([
   {
@@ -91,15 +91,15 @@ const router = createBrowserRouter([
     ),
     loader: usersLoader,
   },
-  // {
-  //   path: "/movies",
-  //   element: (
-  //     <>
-  //       <MoviesListPage />
-  //     </>
-  //   ),
-  //   loader: moviesListLoader,
-  // },
+  {
+    path: "/movies",
+    element: (
+      <>
+        <MoviesListPage />
+      </>
+    ),
+    loader: moviesListLoader,
+  },
   {
     path: "/movie/:movieId",
     element: (

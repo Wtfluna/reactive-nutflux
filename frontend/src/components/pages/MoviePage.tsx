@@ -9,9 +9,19 @@ export async function loader({ params }) {
 
 async function getMovie(id: number): Promise<Movie> {
   const response = await axios.get(`http://localhost:3000/movies/${id}`);
+
+  // TODO: c'était pour l'exemple, ça ira dans une autre page
+  // await axios.post("http://localhost:3000/register", {
+  //   username: "Fred",
+  //   email: "Pierrafeu",
+  //   password: "",
+  // });
+
   // TODO mettre dans .env
   return response.data[0] as Movie;
 }
+
+//TODO: make it pretty and shine bright like a diamond, merci d'avance Clara et un coeur sur toi
 
 function MoviePage() {
   const { movie } = useLoaderData();
