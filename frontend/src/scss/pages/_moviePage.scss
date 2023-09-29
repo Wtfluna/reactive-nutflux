@@ -1,42 +1,40 @@
 .movieSheet {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    padding: 16px; 
     display: flex;
     flex-direction: column;
-
-    color: #fff;
-    font-family: Arial, sans-serif;
-    padding: 60px;
+    align-items: center;
+    margin: 0 auto;
+    max-width: fit-content;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: absolute;
   
     &__title {
-      font-size: 36px;
-      margin: 20px 0;
+      font-size: 2rem; 
+      margin: 8px 0; 
     }
   
-    &__release_date {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-  
+    &__release_date,
     &__duration {
-      font-size: 20px;
-      margin: 10px 0;
+      font-size: 1rem; 
+      margin: 4px 0; 
     }
-  
-    &__poster {
-      max-width: 250px;
-      height: auto;
-      margin: 20px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .group { 
+        color: #9d94bf;
     }
-  
     &__summary {
-      font-size: 18px;
-      margin: 20px 0;
-
+      font-size: 1.2rem; 
+      margin: 12px 0; 
     }
   
     &__pegi {
-      font-size: 20px;
-      margin: 10px 0;
-    }
+        font-size: 1rem;
+        padding: 10px;
+        border: #9d94bf 1px solid;
+        border-radius: 50%;
+        background-color: #9d94bf;
+        font-weight: 900;
+      }
   }
-  
