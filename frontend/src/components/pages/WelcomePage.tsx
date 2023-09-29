@@ -1,5 +1,3 @@
-import "../../scss/pages/welcome.scss";
-
 export default function WelcomePage() {
   return (
     <div className="welcome__banner">

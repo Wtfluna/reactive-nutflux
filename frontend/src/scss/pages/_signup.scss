@@ -1,71 +1,15 @@
-input[type="text"],
-input[type="password"],
-button,
-textarea {
-  font-size: 22px;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
-}
-
-label,
-button {
-  margin-top: 1.5rem;
-}
-
-.instructions {
-  font-size: 0.8rem;
-  border-radius: 0.5rem;
-  background: #000;
-  color: #fff;
-  padding: 0.25rem;
-  position: relative;
-  bottom: -10px;
-}
-
-.offscreen {
-  position: absolute;
-  left: -9999px;
-  text-align: left;
-}
-
-.hide {
-  display: none;
-}
-
-.valid {
-  color: #9d94bfc0;
-  margin-left: 0.25rem;
-}
-
-.invalid {
-  color: white;
-  margin-left: 0.25rem;
-}
-
-.errmsg {
-  background-color: lightpink;
-  color: firebrick;
-  font-weight: bold;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.line {
-  display: inline-block;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
 
 .signup {
-  box-sizing: border-box;
   margin: 0 auto;
   padding: 60px;
   max-width: fit-content;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.342);
+  background-color: rgba(0, 0, 0, 0.63);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Montserrat", sans-serif;
 
   &__h {
     font-weight: 900;
@@ -76,6 +20,7 @@ button {
   &__form {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 
     & input {
       color: rgb(255, 255, 255);
@@ -88,7 +33,7 @@ button {
     }
     & button {
       color: #e8e8e8;
-      background-color: #9d94bfc0;
+      background-color: #9d94bf;
       border: transparent;
       border-radius: 2px;
       padding: 1rem;
@@ -114,8 +59,5 @@ button {
       transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
       cursor: pointer;
     }
-  }
-  svg{
-    padding-bottom: 10px;
   }
 }

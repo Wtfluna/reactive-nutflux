@@ -66,3 +66,37 @@ app.use(ExceptionsHandler)
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
 
 // http://localhost:3000/api-docs/
+
+/*
+ * TODO backend:
+ * Faire marcher le /register -> coder le service et raccorder les fils (normalement presque bon les fils)
+ * --> Si on a ça, on peut créer des account en DB
+ *
+ * Faire le /login -> index, LoginController, LoginService... (SELECT FROM accounts WHERE vérifier email et password)
+ * --> Si on a ça, on peut se logger et on retourne au front le account_id que le front devrait stocker dans un cookie ou dans le local storage (voir todolist workshop)
+ *
+ * Il faut un endpoint /users en POST pour créer un user (pas dans le swagger actuellement) -> INSERT INTO users
+ * On a besoin du username, du account_id (que le front a stocké quand il a login) et de l'avatar (pas obligé l'avatar)
+ * ATTENTION, ici quand on crée un user, on a dit qu'on créait aussi 3 lists pour ce user (INSERT INTO lists), avec les noms qu'on veut (Déjà Vu...)
+ * --> Sur la page ChooseProfile, on a un gros + pour créer (si pas déjà 3 mais pas obligé de gérer ça maintenant)
+ *
+ * Faire le /users/account/:account_id -> index, UserController, UserService --> SELECT FROM users WHERE account_id blabla)
+ * --> Si on a ça, on peut faire marcher la page ChooseProfile, quand on clique sur un des users (BABI), on va encore une fois stocker user_id cette fois
+ * --> Là en mémoire (cookie, storage...) le front il a account_id = 1 (par ex) et user_id = 2 (par ex)
+ *
+ * Faire marcher le /lists/user/:user_id -> SELECT FROM lists WHERE user_id blabla)
+ * --> Là on peut afficher la page d'accueil du user qui affiche les 3 listes et pout_r chaque liste on va devoir appeler le endpoint d'après
+ *
+ * Faire marcher le /movies/lists/:list_id -> SELECT FROM movies avec une table pivot movies_lists je crois WHERE list_id blabla
+ * --> Là on peut afficher un truc du style
+ *  DEJA VU
+ *    AVATAR - MARS ATTACK - ... chaque film étant une petite vignette jolie
+ * Quand on clique sur une vignette, on affiche le film soit dans sa page soit embedded dans le page avec un truc stylé mais on sait pas comment on fait
+ *
+ * Pareil les series mais vaut mieux faire marcher tous les films avant, series c'est copier/coller des films
+ *
+ * On a besoin d'un nouveau truc qu'on découvre, un POST sur /lists avec list_id, movie_id pour ajouter le film dans une liste quand on clique sur un bouton
+ * --> INSERT INTO la table pivot
+ * Idéalement il faudrait aussi un endpoint DELETE sur /lists avec list_id, movie_id pour supprimer le film de la liste
+ * --> DELETE FROM la table pivot
+ */

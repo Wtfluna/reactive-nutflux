@@ -22,8 +22,20 @@ RegisterController.post('/register', register);
 
 export { RegisterController };
 
-// const service = new RegisterService()
+const service = new RegisterService()
 
+RegisterController.post('/', async (req, res) => {
+  const username = req.body.username
+  const email = req.body.email
+  const password = req.body.password
+  //TODO return (pareil).json, 200,404(ca existe deja)
+  const newAccount: Account = await service.createNewAccount(
+    username,
+    email,
+    password
+  )
+})
+export { RegisterController }
 // RegisterController.post('/', async (req, res) => {
 //   const username = req.body.username
 //   const email = req.body.email

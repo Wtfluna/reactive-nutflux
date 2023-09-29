@@ -55,7 +55,20 @@ import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
 import RegisterPage from "./components/pages/RegisterPage";
 import LoginPage from "./components/pages/LoginPage";
+
+import ChooseProfilePage, {
+  loader as usersLoader,
+} from "./components/pages/ChooseProfilePage";
+
 import MoviePage, { loader as movieLoader } from "./components/pages/MoviePage";
+
+import MoviesListPage, {
+  loader as moviesListLoader,
+} from "./components/pages/MoviesListPage";
+
+import SeriePage, {
+  loader as serieLoader,
+} from "./components/pages/SeriesPage";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +96,24 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/user/:userId",
+    element: (
+      <>
+        <ChooseProfilePage />
+      </>
+    ),
+    loader: usersLoader,
+  },
+  {
+    path: "/movies",
+    element: (
+      <>
+        <MoviesListPage />
+      </>
+    ),
+    loader: moviesListLoader,
+  },
+  {
     path: "/movie/:movieId",
     element: (
       <>
@@ -90,6 +121,16 @@ const router = createBrowserRouter([
       </>
     ),
     loader: movieLoader,
+  },
+
+  {
+    path: "/serie/:serieId",
+    element: (
+      <>
+        <SeriePage />
+      </>
+    ),
+    loader: serieLoader,
   },
 ]);
 
@@ -142,5 +183,13 @@ export default App;
 */
 
 // const axios = require("axios").default;
+
+// TODO: c'était pour l'exemple, ça ira dans une autre page
+// await axios.post("http://localhost:3000/register", {
+//   username: "Fred",
+//   email: "Pierrafeu",
+//   password: "",
+// });
+
 // auth controller et webtokens json pour login
 // nodemailer pour envoyer mail de confirmation register
