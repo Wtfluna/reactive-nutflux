@@ -8,8 +8,12 @@ import { rejects } from 'assert'
 dotenv.config()
 */
 
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
+import mysql from 'mysql2'
 export class RegisterService {
+  createNewAccount(username: any, email: any, password: any): import("../types/accounts").Account | PromiseLike<import("../types/accounts").Account> {
+    throw new Error('Method not implemented.');
+  }
   db_connection: any;
 
   constructor() {
@@ -23,12 +27,12 @@ export class RegisterService {
 
   async registerUser(username: any, email: any, password: any) {
     try {
-      // Hash the password
+      /* Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
-
+*/
       const [results] = await this.db_connection.execute(
         "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?)",
-        [username, email, hashedPassword]
+        [username, email, password]
       );
 
       return results.insertId;

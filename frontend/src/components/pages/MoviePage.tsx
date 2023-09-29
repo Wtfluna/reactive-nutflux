@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
+import "../../scss/pages/_moviePage.scss";
 
 export async function loader({ params }) {
   const movie = await getMovie(params.movieId);

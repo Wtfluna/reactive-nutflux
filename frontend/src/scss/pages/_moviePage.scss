@@ -1,0 +1,42 @@
+.movieSheet {
+    display: flex;
+    flex-direction: column;
+
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 60px;
+  
+    &__title {
+      font-size: 36px;
+      margin: 20px 0;
+    }
+  
+    &__release_date {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  
+    &__duration {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  
+    &__poster {
+      max-width: 250px;
+      height: auto;
+      margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    &__summary {
+      font-size: 18px;
+      margin: 20px 0;
+
+    }
+  
+    &__pegi {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  }
+  

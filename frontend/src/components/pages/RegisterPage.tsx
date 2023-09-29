@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import "../../scss/pages/signup.scss";
+import "../../scss/pages/_signup.scss";
 import { useRef, useEffect, useState, FormEvent } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
