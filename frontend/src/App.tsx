@@ -143,3 +143,4 @@ export default App;
 
 // const axios = require("axios").default;
 // auth controller et webtokens json pour login
+// nodemailer pour envoyer mail de confirmation register

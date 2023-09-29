@@ -11,7 +11,7 @@ import { SeriesController } from './controllers/series.controller'
 import { GenresController } from './controllers/genres.controller'
 import { DirectorsController } from './controllers/directors.controller'
 import { ActorsController } from './controllers/actors.controller'
-// import { RegisterController } from './controllers/register.controller'
+import { RegisterController } from './controllers/register.controller'
 
 // On créé une nouvelle "application" express
 
@@ -40,7 +40,7 @@ app.use('/directors', DirectorsController)
 
 app.use('/actors', ActorsController)
 
-// app.use('/register', RegisterController)
+app.use('/register', RegisterController)
 
 /*
  * Swagger (pour voir le contrat de l'API)
@@ -66,15 +66,3 @@ app.use(ExceptionsHandler)
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
 
 // http://localhost:3000/api-docs/
-
-// Ajout const db pour gérer register + login
-// const mysql = require('mysql')
-// const db = mysql.createConnection({
-//   user: 'root',
-//   host: 'localhost',
-//   password: 'password',
-//   database: 'LoginSystem'
-// })
-// app.post('/register', (req, res) => {
-//   db.query('INSERT INTO accounts')
-// })
