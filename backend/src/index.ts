@@ -11,6 +11,7 @@ import { SeriesController } from './controllers/series.controller'
 import { GenresController } from './controllers/genres.controller'
 import { DirectorsController } from './controllers/directors.controller'
 import { ActorsController } from './controllers/actors.controller'
+import { RegisterController } from './controllers/register.controller'
 // import { RegisterController } from './controllers/register.controller'
 
 // On créé une nouvelle "application" express
@@ -40,7 +41,7 @@ app.use('/directors', DirectorsController)
 
 app.use('/actors', ActorsController)
 
-// app.use('/register', RegisterController)
+app.use('/register', RegisterController)
 
 /*
  * Swagger (pour voir le contrat de l'API)

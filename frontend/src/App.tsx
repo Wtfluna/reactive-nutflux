@@ -68,6 +68,7 @@ import MoviesListPage, {
 import SeriePage, {
   loader as serieLoader,
 } from "./components/pages/SeriesPage";
+import RegisterPage from "./components/pages/RegisterPage";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,14 @@ const router = createBrowserRouter([
     element: (
       <>
         <WelcomePage />
+      </>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <>
+        <RegisterPage />
       </>
     ),
   },

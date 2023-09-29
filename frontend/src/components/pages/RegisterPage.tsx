@@ -1,20 +1,37 @@
-import { useState } from "react";
+import axios from "axios";
+import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
+  // State
   const [email, setEmail] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
   const [usernameReg, setUsernameReg] = useState("");
+  const navigate = useNavigate();
 
+  // Comportement
+
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await axios.post("http://localhost:3000/register", {
+      username: usernameReg,
+      email: email,
+      password: passwordReg,
+    });
+    navigate("/login");
+  };
+
+  // Render
   return (
     <div className="signup">
       <div className="signup__h">
         <h2>Sign Up</h2>
       </div>
 
-      <div className="signup__form">
+      <form className="signup__form" onSubmit={handleFormSubmit}>
         <input
           type="text"
-          onChange={() => {
+          onChange={(e) => {
             setUsernameReg(e.target.value);
           }}
           placeholder="Username"
@@ -30,7 +47,7 @@ export default function RegisterPage() {
         />
         <input
           type="password"
-          onChange={() => {
+          onChange={(e) => {
             setPasswordReg(e.target.value);
           }}
           placeholder="Password"
@@ -43,7 +60,7 @@ export default function RegisterPage() {
         <button role="button" type="submit">
           Sign Up
         </button>
-      </div>
+      </form>
     </div>
   );
 }
