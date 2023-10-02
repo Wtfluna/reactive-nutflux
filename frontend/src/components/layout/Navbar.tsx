@@ -4,14 +4,14 @@ function Navbar() {
       <div className="navbar__container">
         <div className="navbar__logo">
           {" "}
-          <a href="./Welcome.tsx">
+          <a href="/">
             <img src="./assets/NUTFLUX.png" alt="logo" />
           </a>
         </div>
         <div className="navbar__links">
           <ul>
             <li>
-              <a href="./LogIn.tsx">Login</a>
+              <a href="/login">Login</a>
             </li>
           </ul>
         </div>

@@ -12,7 +12,7 @@ import { GenresController } from './controllers/genres.controller'
 import { DirectorsController } from './controllers/directors.controller'
 import { ActorsController } from './controllers/actors.controller'
 import { RegisterController } from './controllers/register.controller'
-// import { RegisterController } from './controllers/register.controller'
+import { LoginController } from './controllers/login.controller'
 
 // On créé une nouvelle "application" express
 
@@ -43,6 +43,8 @@ app.use('/actors', ActorsController)
 
 app.use('/register', RegisterController)
 
+app.use('/login', LoginController)
+
 /*
  * Swagger (pour voir le contrat de l'API)
  * http://localhost:3000/api-docs/
@@ -68,22 +70,8 @@ app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
 
 // http://localhost:3000/api-docs/
 
-// Ajout const db pour gérer register + login
-// const mysql = require('mysql')
-// const db = mysql.createConnection({
-//   user: 'root',
-//   host: 'localhost',
-//   password: 'password',
-//   database: 'LoginSystem'
-// })
-// app.post('/register', (req, res) => {
-//   db.query('INSERT INTO accounts')
-// })
-
 /*
  * TODO backend:
- * Faire marcher le /register -> coder le service et raccorder les fils (normalement presque bon les fils)
- * --> Si on a ça, on peut créer des account en DB
  *
  * Faire le /login -> index, LoginController, LoginService... (SELECT FROM accounts WHERE vérifier email et password)
  * --> Si on a ça, on peut se logger et on retourne au front le account_id que le front devrait stocker dans un cookie ou dans le local storage (voir todolist workshop)
