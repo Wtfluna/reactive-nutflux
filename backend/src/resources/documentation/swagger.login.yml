@@ -39,7 +39,7 @@ paths:
 # --- Types
 components:
   schemas:
-    Register:
+    Login:
       type: object
       properties:
         email:
