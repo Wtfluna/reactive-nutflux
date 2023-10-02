@@ -10,8 +10,8 @@ export default function App(){
    </>
  );
 }
-*/
-/*/CHOOSE PROFILE
+
+/*CHOOSE PROFILE
 import ChooseProfile from "./components/pages/ChooseProfile";
 
 export default function App(){
@@ -22,8 +22,8 @@ export default function App(){
  );
 }
 */
-/*
-//SIGN UP 
+
+/*SIGN UP 
  import Navbar from "./components/Navbar/Navbar";
  import SignUp from "./components/pages/SignUp";
  
@@ -35,8 +35,8 @@ export default function App(){
     </>
   );
  }
-
 */
+
 /*//LOGIN 
 import Navbar from "./components/Navbar/Navbar";
 import LogIn from "./components/pages/LogIn";
@@ -53,8 +53,9 @@ export default function App() {
 // WELCOME PAGE
 import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
+import RegisterPage from "./components/pages/RegisterPage";
 import LoginPage from "./components/pages/LoginPage";
-
+import HomePage, { combinedLoader } from "./components/pages/HomePage";
 import ChooseProfilePage, {
   loader as usersLoader,
 } from "./components/pages/ChooseProfilePage";
@@ -68,7 +69,10 @@ import MoviesListPage, {
 import SeriePage, {
   loader as serieLoader,
 } from "./components/pages/SeriesPage";
-import RegisterPage from "./components/pages/RegisterPage";
+
+import SeriesListPage, {
+  loader as seriesListLoader,
+} from "./components/pages/SeriesListPage";
 
 const router = createBrowserRouter([
   {
@@ -105,6 +109,15 @@ const router = createBrowserRouter([
     loader: usersLoader,
   },
   {
+    path: "/home",
+    element: (
+      <>
+        <HomePage />
+      </>
+    ),
+    loader: combinedLoader,
+  },
+  {
     path: "/movies",
     element: (
       <>
@@ -122,7 +135,6 @@ const router = createBrowserRouter([
     ),
     loader: movieLoader,
   },
-
   {
     path: "/serie/:serieId",
     element: (
@@ -132,6 +144,14 @@ const router = createBrowserRouter([
     ),
     loader: serieLoader,
   },
+ { path: "/series",
+  element: (
+    <>
+      <SeriesListPage />
+    </>
+  ),
+  loader: seriesListLoader,
+},
 ]);
 
 export default function App() {
@@ -190,3 +210,6 @@ export default App;
 //   email: "Pierrafeu",
 //   password: "",
 // });
+
+// auth controller et webtokens json pour login
+// nodemailer pour envoyer mail de confirmation register

@@ -1,7 +1,7 @@
 @use "../base/variables";
 
 .navbar {
-  background-color: #1d1d1d;
+  background-color: #1d1d1dbd;
   color: variables.$light-grey;
   height: 48px;
   padding: 10px 0;
@@ -12,10 +12,33 @@
   z-index: 100;
   transition: all 0.3s ease-in-out;
 
+  &__dropdown {
+    display: none;
+    position: absolute;
+    background-color: variables.$navbar-background-color;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  &__dropdown.open {
+    display: block;
+  }
+
+  &__dropdown a {
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+  }
+
+  &__dropdown a:hover {
+    background-color: #1d1d1dbd;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
@@ -40,16 +63,13 @@
         a {
           text-decoration: none;
           color: #e8e8e8;
-          background-color: #9d94bf;
-          border: transparent;
-          border-radius: 2px;
           padding: 0.6rem;
           font-size: 1rem;
-          font-weight: 600;
+          font-weight: 900;
           font-family: "Montserrat", sans-serif;
 
           &:hover {
-            background-color: #9d94bf;
+            color: #9d94bf;
             transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
             cursor: pointer;
           }
