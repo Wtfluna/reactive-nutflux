@@ -2,7 +2,7 @@ import axios from "axios";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function RegisterPage() {
+export default function RegisterPage() {
   // State
   const [email, setEmail] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
@@ -64,5 +64,3 @@ function RegisterPage() {
     </div>
   );
 }
-
-export default RegisterPage;

@@ -16,7 +16,7 @@ export default function LoginPage() {
       email: email,
       password: password,
     });
-    navigate("/movies");
+    navigate("/home");
   };
   // Render
   return (

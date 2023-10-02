@@ -1,24 +1,9 @@
 import { Router } from 'express'
 import { RegisterService } from '~/services/register.service'
 
-const RegisterController = Router();
-const service = new RegisterService();
+const RegisterController = Router()
 
-async function register(req: any, res: any) {
-  const { username, email, password } = req.body;
-
-  try {
-    const userId = await service.registerUser(username, email, password);
-    console.log("User registered:", userId);
-
-    res.status(201).json({ message: "Registration successful" });
-  } catch (error) {
-    console.error("Registration failed:", error);
-    res.status(500).json({ message: "Registration failed" });
-  }
-}
-
-RegisterController.post('/register', register);
+const service = new RegisterService()
 
 RegisterController.post('/', async (req, res) => {
   const username = req.body.username
