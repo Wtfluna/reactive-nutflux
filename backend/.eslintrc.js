@@ -11,7 +11,7 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    indent: ['error', 2],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'multiline-comment-style': ['error', 'starred-block'],
     'prefer-template': 'error',
     curly: 'error',
