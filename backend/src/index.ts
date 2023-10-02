@@ -68,25 +68,8 @@ app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
 
 // http://localhost:3000/api-docs/
 
-// Ajout const db pour gérer register + login
-// const mysql = require('mysql')
-// const db = mysql.createConnection({
-//   user: 'root',
-//   host: 'localhost',
-//   password: 'password',
-//   database: 'LoginSystem'
-// })
-// app.post('/register', (req, res) => {
-//   db.query('INSERT INTO accounts')
-// })
-
 /*
  * TODO backend:
- * Faire marcher le /register -> coder le service et raccorder les fils (normalement presque bon les fils)
- * --> Si on a ça, on peut créer des account en DB
- *
- * Faire le /login -> index, LoginController, LoginService... (SELECT FROM accounts WHERE vérifier email et password)
- * --> Si on a ça, on peut se logger et on retourne au front le account_id que le front devrait stocker dans un cookie ou dans le local storage (voir todolist workshop)
  *
  * Il faut un endpoint /users en POST pour créer un user (pas dans le swagger actuellement) -> INSERT INTO users
  * On a besoin du username, du account_id (que le front a stocké quand il a login) et de l'avatar (pas obligé l'avatar)

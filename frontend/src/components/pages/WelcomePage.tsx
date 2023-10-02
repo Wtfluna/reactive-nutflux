@@ -10,7 +10,6 @@ export default function WelcomePage() {
           <input type="email" placeholder="Email address" name="email" />
           <button role="button" type="submit">
             <a href="./SignUp.tsx">Sign Up</a>
-            {/* TODO: changer a href par linkto */}
           </button>
         </div>
       </div>
