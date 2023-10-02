@@ -1,8 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
+@use "base/variables";
 
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #1d1d1d;
-  color: #e8e8e8;
-  //#9d94bf;
-}
+@use "layout/navbar";
+
+@use "pages/chooseProfilePage";
+@use "pages/homePage";
+@use "pages/loginPage";
+@use "pages/signup";
+@use "pages/welcomePage";
+
+// TODO faire des variables et des partials (use)

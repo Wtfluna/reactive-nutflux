@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
+
+div {
+  .header {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+
+    &__logo {
+      margin-top: 25px;
+
+      .img {
+        height: 48px;
+      }
+    }
+  }
+}
+.profile {
+  margin: auto;
+  display: table;
+
+  &__title {
+    font-size: 3em;
+    word-spacing: 5px;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: normal;
+    margin-bottom: 40px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &__user {
+    width: 200px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #151415;
+  }
+
+  p {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &__card {
+    text-align: center;
+    display: inline-block;
+  }
+  .card + .card {
+    margin-left: 15px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .profile:hover {
+    border: 2px solid #fff;
+    border-radius: 5px;
+  }
+
+  &__button {
+    margin-top: 40px;
+    color: gray;
+    background-color: rgba(0, 0, 0, 0.63);
+    border: 2px solid gray;
+    width: 150px;
+    height: 40px;
+    font-family: "Montserrat", sans-serif;
+    display: table;
+  }
+
+  button:hover {
+    border: 2px solid #fff;
+    color: #fff;
+  }
+}
+
+/*@media screen and (max-width:520px) {
+
+   .card{
+     display: table;
+     margin: auto;
+   }
+  
+   .card + .card {
+    margin-left: auto;
+  }
+  
+  }
+  
+// Media query
+@media (max-width: 768px) {
+  .logo {
+    margin-top: 15px;
+
+    & img {
+      height: 36px;
+    }
+  }
+
+  header {
+    margin-bottom: 50px;
+  }
+
+  .list-profile-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .profile {
+    width: 150px;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+
+  .card {
+    display: block;
+    margin: 10px auto;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 120px;
+    height: 36px;
+  }
+}
+*/

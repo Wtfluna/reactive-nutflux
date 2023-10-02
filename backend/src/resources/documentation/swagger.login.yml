@@ -1,0 +1,53 @@
+tags:
+  name: Login
+  description: The login managing API
+
+# --- Routes
+paths:
+  /login:
+    post:
+      summary: Connection to user account
+      tags: [Login]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: Registred user's email
+                password:
+                  type: string
+                  format: password
+                  description: Registred user's password
+              required:
+                - email
+                - password
+      responses:
+        200:
+          description: User is logged in
+          items:
+          $ref: '#/components/schemas/Login'
+        403:
+          description: Authentication failed, wrong password and/or email address
+        500:
+          description: Internal server error
+
+# --- Types
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          description: The user's email
+        password:
+          type: string
+          description: The user's password
+      example:
+        email: adeline.merle@gmail.com
+        password: pass123
