@@ -55,7 +55,7 @@ import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
 import RegisterPage from "./components/pages/RegisterPage";
 import LoginPage from "./components/pages/LoginPage";
-
+import HomePage, { combinedLoader } from "./components/pages/HomePage";
 import ChooseProfilePage, {
   loader as usersLoader,
 } from "./components/pages/ChooseProfilePage";
@@ -69,6 +69,10 @@ import MoviesListPage, {
 import SeriePage, {
   loader as serieLoader,
 } from "./components/pages/SeriesPage";
+
+import SeriesListPage, {
+  loader as seriesListLoader,
+} from "./components/pages/SeriesListPage";
 
 const router = createBrowserRouter([
   {
@@ -105,6 +109,15 @@ const router = createBrowserRouter([
     loader: usersLoader,
   },
   {
+    path: "/home",
+    element: (
+      <>
+        <HomePage />
+      </>
+    ),
+    loader: combinedLoader,
+  },
+  {
     path: "/movies",
     element: (
       <>
@@ -122,7 +135,6 @@ const router = createBrowserRouter([
     ),
     loader: movieLoader,
   },
-
   {
     path: "/serie/:serieId",
     element: (
@@ -132,6 +144,14 @@ const router = createBrowserRouter([
     ),
     loader: serieLoader,
   },
+ { path: "/series",
+  element: (
+    <>
+      <SeriesListPage />
+    </>
+  ),
+  loader: seriesListLoader,
+},
 ]);
 
 export default function App() {
