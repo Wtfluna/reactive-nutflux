@@ -10,6 +10,7 @@
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.0"
+    "@types/bcrypt": "^5.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }

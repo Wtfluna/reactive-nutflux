@@ -9,7 +9,6 @@ function Navbar() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // JSX for the dropdown content
   const dropdownContent = (
     <div className={`navbar__dropdown ${isDropdownOpen ? 'open' : ''}`}>
       <a href="">Change profile</a>

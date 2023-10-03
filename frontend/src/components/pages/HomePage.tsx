@@ -74,7 +74,7 @@ function HomePage() {
       </div>
 
       <div className="seriesHome">
-        <h2 className="seriesHome__listName">All series</h2>
+        <h2 className="seriesHome__listName">All Series</h2>
         <Carousel
           showThumbs={false}
           showStatus={false}

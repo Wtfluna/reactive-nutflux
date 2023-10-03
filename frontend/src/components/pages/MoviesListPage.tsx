@@ -24,7 +24,7 @@ function MoviesListPage() {
   // Render
   return (
       <div className="moviesList">
-        <h2 className="moviesList__listName">All movies</h2>
+        <h2 className="moviesList__listName">All Movies</h2>
         <div className="moviesList__items">
           {movies.map((movie) => (
             <div key={movie.id} className="moviesList__item">
