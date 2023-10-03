@@ -166,4 +166,3 @@ export default function App() {
 }
 
 // auth controller et webtokens json pour login
-// nodemailer pour envoyer mail de confirmation register
