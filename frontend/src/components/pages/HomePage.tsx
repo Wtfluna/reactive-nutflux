@@ -1,10 +1,10 @@
-import { useLoaderData } from 'react-router-dom';
-import Movie from '../../types/movie';
-import Serie from '../../types/serie';
-import axios from 'axios';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import '../../scss/pages/_homePage.scss';
+import { useLoaderData } from "react-router-dom";
+import Movie from "../../types/movie";
+import Serie from "../../types/serie";
+import axios from "axios";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "../../scss/pages/_homePage.scss";
 
 export async function combinedLoader() {
   const [movies, series] = await Promise.all([getMovies(), getSeries()]);
@@ -13,19 +13,21 @@ export async function combinedLoader() {
 
 async function getMovies(): Promise<Movie[]> {
   // TODO: mettre dans .env (API_URL)
-  const response = await axios.get('http://localhost:3000/home');
+  const response = await axios.get("http://localhost:3000/movies/all");
   return response.data as Movie[];
 }
 
 async function getSeries(): Promise<Serie[]> {
   // TODO: mettre dans .env (API_URL)
-  const response = await axios.get('http://localhost:3000/home');
+  const response = await axios.get("http://localhost:3000/series/all");
   return response.data as Serie[];
 }
 
 function HomePage() {
-  const { movies, series } = useLoaderData() as { movies: Movie[]; series: Serie[] };
-
+  const { movies, series } = useLoaderData() as {
+    movies: Movie[];
+    series: Serie[];
+  };
 
   // Divise les films en groupes de 6
   const chunkedMovies = [];
@@ -41,8 +43,8 @@ function HomePage() {
   const serieGap = 20;
 
   return (
-    <div className='all'>
-      <div className='new'>
+    <div className="all">
+      <div className="new">
         <h2>What's new on Nutflux</h2>
       </div>
       <div className="moviesHome">
@@ -59,9 +61,18 @@ function HomePage() {
                 <div
                   key={movie.id}
                   className="moviesHome__item"
-                  style={{ marginRight: movieIndex < movieGroup.length - 1 ? `${movieGap}px` : '0' }}
+                  style={{
+                    marginRight:
+                      movieIndex < movieGroup.length - 1
+                        ? `${movieGap}px`
+                        : "0",
+                  }}
                 >
-                  <img className="moviesHome__poster" src={movie.poster} alt="poster" />
+                  <img
+                    className="moviesHome__poster"
+                    src={movie.poster}
+                    alt="poster"
+                  />
                   <div className="moviesHome__itemDetails">
                     <h2 className="moviesHome__title">{movie.title}</h2>
                     <h3 className="moviesHome__duration">{movie.duration}</h3>
@@ -87,9 +98,18 @@ function HomePage() {
                 <div
                   key={serie.id}
                   className="seriesHome__item"
-                  style={{ marginRight: serieIndex < serieGroup.length - 1 ? `${serieGap}px` : '0' }}
+                  style={{
+                    marginRight:
+                      serieIndex < serieGroup.length - 1
+                        ? `${serieGap}px`
+                        : "0",
+                  }}
                 >
-                  <img className="seriesHome__poster" src={serie.poster} alt="poster" />
+                  <img
+                    className="seriesHome__poster"
+                    src={serie.poster}
+                    alt="poster"
+                  />
                   <div className="seriesHome__itemDetails">
                     <h2 className="seriesHome__title">{serie.title}</h2>
                     <h3 className="seriesHome__duration">{serie.duration}</h3>

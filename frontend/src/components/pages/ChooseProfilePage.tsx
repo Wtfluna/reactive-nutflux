@@ -7,7 +7,7 @@ export async function loader({ params }) {
 }
 
 async function getUser(id: number): Promise<User> {
-  const response = await axios.get(`http://localhost:3000/user/${id}`);
+  const response = await axios.get(`http://localhost:3000/users/account/10`);
   return response.data[0] as User;
 }
 

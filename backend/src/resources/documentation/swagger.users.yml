@@ -60,11 +60,11 @@ paths:
           description: User not found
   /users/account/{account_id}:
     get:
-      summary: Retrieve user by account ID
+      summary: Retrieve users by account ID
       tags: [User]
       parameters:
         - in: path
-          name: id
+          name: account_id
           schema:
             type: integer
           required: true
