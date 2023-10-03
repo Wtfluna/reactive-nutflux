@@ -1,3 +1,14 @@
+.new{
+  height: 300px;
+  width: fit-content;
+  
+  &__title{
+    transform: translateX(20);
+  }
+  &__image{
+    height: fit-content;
+  }
+}
 .moviesHome, .seriesHome {
   width: 100%;
   height: auto;

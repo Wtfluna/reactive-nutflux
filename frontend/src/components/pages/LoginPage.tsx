@@ -1,6 +1,7 @@
 import axios from "axios";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { authTokenKey } from "../../localStorage";
 
 export default function LoginPage() {
   // State
@@ -12,10 +13,16 @@ export default function LoginPage() {
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await axios.post("http://localhost:3000/login", {
+
+    const response = await axios.post("http://localhost:3000/login", {
       email: email,
       password: password,
     });
+
+    const token = response.data;
+
+    localStorage.setItem(authTokenKey, token);
+
     navigate("/home");
   };
   // Render
@@ -26,7 +33,7 @@ export default function LoginPage() {
       </div>
       <form className="login__form" onSubmit={handleFormSubmit}>
         <input
-          type="text"
+          type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
