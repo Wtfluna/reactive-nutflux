@@ -50,24 +50,28 @@ function Navbar() {
 
         <div className="navbar__links">
           <ul>
-            <li>
-              <a href="">Search</a>
-            </li>
-            <li>
-              <a href="/home">Home</a>
-            </li>
-            <li>
-              <a href="">My list</a>
-            </li>
-            <li>
-              <a href="/series">Series</a>
-            </li>
-            <li>
-              <a href="/movies">Movies</a>
-            </li>
-            <li>
-              <a href="#">Discover by genre</a>
-            </li>
+            {token && (
+              <>
+                <li>
+                  <a href="">Search</a>
+                </li>
+                <li>
+                  <a href="/home">Home</a>
+                </li>
+                <li>
+                  <a href="">My list</a>
+                </li>
+                <li>
+                  <a href="/series">Series</a>
+                </li>
+                <li>
+                  <a href="/movies">Movies</a>
+                </li>
+                <li>
+                  <a href="#">Discover by genre</a>
+                </li>
+              </>
+            )}
             {token && (
               <>
                 <li>
@@ -77,7 +81,7 @@ function Navbar() {
                   {dropdownContent}
                 </li>
                 <li>
-                  <a href="#" onClick={logout}>
+                  <a href="/" onClick={logout}>
                     Logout
                   </a>
                 </li>

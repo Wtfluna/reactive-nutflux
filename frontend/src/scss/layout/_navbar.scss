@@ -1,7 +1,7 @@
 @use "../base/variables";
 
 .navbar {
-  background-color: #1d1d1dbd;
+  background-color: variables.$navbar-background-color;
   color: variables.$light-grey;
   height: 48px;
   padding: 10px 0;
@@ -11,6 +11,50 @@
   width: 100%;
   z-index: 100;
   transition: all 0.3s ease-in-out;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    max-width: 1492px;
+    margin: 0 auto;
+    padding: 12px 20px;
+  }
+
+  &__logo {
+    img {
+      width: auto;
+      height: 48px;
+    }
+  }
+
+  &__links {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      li {
+        margin-right: 20px;
+
+        a {
+          text-decoration: none;
+          color: variables.$light-grey;
+          padding: 0.6rem;
+          font-size: 1rem;
+          font-weight: 900;
+          font-family: variables.$global-font-family;
+
+          &:hover {
+            color: variables.$lavender;
+            transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 
   &__dropdown {
     display: none;
@@ -32,49 +76,6 @@
   }
 
   &__dropdown a:hover {
-    background-color: #1d1d1dbd;
-  }
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: right;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  &__logo {
-    img {
-      width: auto;
-      height: 48px;
-    }
-  }
-  &__links {
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li {
-        margin-right: 20px;
-
-        a {
-          text-decoration: none;
-          color: #e8e8e8;
-          padding: 0.6rem;
-          font-size: 1rem;
-          font-weight: 900;
-          font-family: "Montserrat", sans-serif;
-
-          &:hover {
-            color: #9d94bf;
-            transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-            cursor: pointer;
-          }
-        }
-      }
-    }
+    background-color: variables.$navbar-background-color;
   }
 }

@@ -23,7 +23,7 @@ export default function LoginPage() {
 
     localStorage.setItem(authTokenKey, token);
 
-    navigate("/home");
+    navigate("/users");
   };
   // Render
   return (
