@@ -50,6 +50,7 @@ function HomePage() {
       </div>
       <div className="moviesHome">
         <h2 className="moviesHome__listName">All movies</h2>
+        <div id="moviesCarousel">
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -83,10 +84,12 @@ function HomePage() {
             </div>
           ))}
         </Carousel>
+        </div>
       </div>
 
       <div className="seriesHome">
         <h2 className="seriesHome__listName">All Series</h2>
+        <div id="seriesCarousel">
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -120,6 +123,7 @@ function HomePage() {
             </div>
           ))}
         </Carousel>
+        </div>
       </div>
     </div>
   );

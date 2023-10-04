@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
 import "../../scss/pages/_moviesList.scss";
@@ -33,13 +33,13 @@ function MoviesListPage() {
                   <div className="moviesList__itemDetails">
                 <h2 className="moviesList__title">{movie.title}</h2>
                 <h3 className="moviesList__duration">{movie.duration}</h3>
+                
               </div>
               </Link>
             </div>
           ))}
         </div>
       </div>
-      
     );
   }
 

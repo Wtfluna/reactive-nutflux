@@ -22,7 +22,7 @@ function MoviePage() {
   //TODO: make it pretty and shine bright like a diamond, merci d'avance Clara et un coeur sur toi
   return (
     <article className="movieSheet">
-       <iframe
+      <iframe
         width="660"
         height="415"
         src={`https://www.youtube.com/embed/${movie.trailer}`}
@@ -37,8 +37,8 @@ function MoviePage() {
       {/*
       <p className="movieSheet__director">{movie.}</p>
       <p className="movieSheet__genre">{movie.}</p>
-      <p className="movieSheet__actors">{movie.}</p>*/ }
-    
+      <p className="movieSheet__actors">{movie.}</p>
+      */ }
     </article>
   );
 }

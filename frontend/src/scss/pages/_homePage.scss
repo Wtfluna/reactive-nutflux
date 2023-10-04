@@ -84,3 +84,21 @@
     border-radius: 20px;
   }
 }
+
+/* Media query for medium-sized screens */
+@media (max-width: 768px) {
+  #moviesCarousel,
+  #seriesCarousel {
+    width: 80%;
+    /* Adjust other styles for medium screens */
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 576px) {
+  #moviesCarousel,
+  #seriesCarousel {
+    width: 100%;
+    /* Adjust other styles for small screens */
+  }
+}
