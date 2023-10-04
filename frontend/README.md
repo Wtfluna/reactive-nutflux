@@ -1,27 +1,68 @@
-# React + TypeScript + Vite
+# Reactive Nutflux
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Overview](#overview)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Database](#database)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This project is a Netflix-like video streaming application developed using Express and Node.js for the backend, React for the frontend, and Sass for styling. It includes features such as video search, streaming playback, and user profile management. The backend API is documented using Swagger, and the database is managed using PHPMyAdmin.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- Backend:
+  - Express
+  - Node.js
+  - Swagger
+  - Typescript
+- Frontend:
+  - React + Vite
+  - Sass
+  - Typescript
+- Database:
+  - PHPMyAdmin
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Project Structure
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **`backend/`**: Backend server and API code.
+- **`frontend/`**: Frontend React application.
+- **`ressources/documentation`**: Swagger documentation for API endpoints.
+
+## Getting Started
+
+1. Start the backend server and frontend development server:
+
+   ```bash
+   # In the backend folder
+   npm start
+
+   # In the frontend folder
+   npm start
+   ```
+
+2. Access the application in your web browser at `http://localhost:3000`.
+
+## Usage
+
+- Use the web interface to search for and stream videos.
+- Create user profiles.
+- Explore different categories of videos.
+
+## API Endpoints
+
+- API documentation is available in the `ressources/documentation` folder.
+- Swagger is used for defining and testing API endpoints.
+
+## Database
+
+- PHPMyAdmin is used for database management.
+
+---
+
+`<repository-url>` and `<project-folder>`

@@ -1,4 +1,7 @@
-.moviesHome, .seriesHome {
+@use "../base/variables";
+
+.moviesHome,
+.seriesHome {
   width: 100%;
   height: auto;
   padding: 120px;
@@ -7,7 +10,7 @@
   margin: 10px 0px;
 
   &__listName {
-    color: #e8e8e8;
+    color: variables.$light-grey;
     font-size: 28px;
     position: absolute;
     padding-left: 30px;
@@ -66,7 +69,7 @@
 
   &__itemDetails,
   &__title {
-    color: #fff;
+    color: variables.$title-color;
     margin: 0 0 10px 0;
     padding-top: 110px;
     text-align: left;

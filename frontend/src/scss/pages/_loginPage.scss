@@ -1,3 +1,4 @@
+@use "../base/variables";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
 
 .login {
@@ -5,7 +6,7 @@
   padding: 60px;
   max-width: fit-content;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.342);
+  background-color: variables.$background-color;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,38 +23,38 @@
     gap: 30px;
 
     input {
-      color: rgb(255, 255, 255);
-      background-color: rgba(0, 0, 0, 0.63);
+      color: variables.$input-color;
+      background-color: variables.$background-color;
       border: transparent;
       border-radius: 2px;
       padding: 1rem;
       font-size: 1rem;
-      font-family: "Montserrat", sans-serif;
+      font-family: variables.$global-font-family;
     }
     button {
-      color: #e8e8e8;
-      background-color: #9d94bfc0;
+      color: variables.$light-grey;
+      background-color: variables.$button-background-color;
       border: transparent;
       border-radius: 2px;
       padding: 1rem;
       font-size: 1rem;
       font-weight: 600;
-      font-family: "Montserrat", sans-serif;
+      font-family: variables.$global-font-family;
 
       &:hover {
-        background-color: #9d94bfec;
+        background-color: variables.$hover-button-background-color;
         transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
         cursor: pointer;
       }
     }
   }
   a {
-    color: #9d94bfc0;
+    color: variables.$button-background-color;
     text-decoration: none;
     font-weight: 900;
 
     &:hover {
-      color: #e8e8e8;
+      color: variables.$light_grey;
       transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
       cursor: pointer;
     }

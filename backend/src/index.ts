@@ -71,13 +71,9 @@ app.use(ExceptionsHandler)
 
 app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
 
-// http://localhost:3000/api-docs/
-
 /*
  * TODO backend:
  *
- * Il faut un endpoint /users en POST pour créer un user (pas dans le swagger actuellement) -> INSERT INTO users
- * On a besoin du username, du account_id (que le front a stocké quand il a login) et de l'avatar (pas obligé l'avatar)
  * ATTENTION, ici quand on crée un user, on a dit qu'on créait aussi 3 lists pour ce user (INSERT INTO lists), avec les noms qu'on veut (Déjà Vu...)
  * --> Sur la page ChooseProfile, on a un gros + pour créer (si pas déjà 3 mais pas obligé de gérer ça maintenant)
  *

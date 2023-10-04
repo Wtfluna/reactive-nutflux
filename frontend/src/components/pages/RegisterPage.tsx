@@ -13,6 +13,7 @@ export default function RegisterPage() {
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // TODO mettre dans .env (API_URL)
     await axios.post("http://localhost:3000/register", {
       username: usernameReg,
       email: email,

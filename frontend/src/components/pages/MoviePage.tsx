@@ -19,26 +19,24 @@ function MoviePage() {
   const movie = useLoaderData() as Movie;
 
   // Render
-  //TODO: make it pretty and shine bright like a diamond, merci d'avance Clara et un coeur sur toi
   return (
     <article className="movieSheet">
       <iframe
         width="660"
         height="415"
         src={`https://www.youtube.com/embed/${movie.trailer}`}
-        frameBorder="0"
         allowFullScreen
       ></iframe>
       <h2 className="movieSheet__title">{movie.title}</h2>
-      <h3 className="movieSheet__release_date group">{movie.release_date}</h3>
-      <h3 className="movieSheet__duration group">{movie.duration}</h3>
+      <h3 className="movieSheet__release_date">{movie.release_date}</h3>
+      <h3 className="movieSheet__duration">{movie.duration}</h3>
       <p className="movieSheet__summary">{movie.summary}</p>
       <p className="movieSheet__pegi">{movie.pegi}</p>
       {/*
       <p className="movieSheet__director">{movie.}</p>
       <p className="movieSheet__genre">{movie.}</p>
       <p className="movieSheet__actors">{movie.}</p>
-      */ }
+      */}
     </article>
   );
 }

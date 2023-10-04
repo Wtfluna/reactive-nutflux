@@ -5,7 +5,9 @@
 @use "pages/chooseProfilePage";
 @use "pages/homePage";
 @use "pages/loginPage";
-@use "pages/signup";
+@use "pages/registerPage";
 @use "pages/welcomePage";
-
-// TODO faire des variables et des partials (use)
+@use "pages/moviesList";
+@use "pages/moviePage";
+@use "pages/seriesList";
+@use "pages/seriePage";
