@@ -28,6 +28,9 @@ function MoviePage() {
       <h3 className="movieSheet__duration">{movie.duration}</h3>
       <p className="movieSheet__summary">{movie.summary}</p>
       <p className="movieSheet__pegi">{movie.pegi}</p>
+      {/* <p className="director">
+        {movie.director.firstname} {movie.director.lastname}
+      </p> */}
       {/*
       <p className="movieSheet__director">{movie.}</p>
       <p className="movieSheet__genre">{movie.}</p>
