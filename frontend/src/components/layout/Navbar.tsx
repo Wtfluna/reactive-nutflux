@@ -56,12 +56,6 @@ function Navbar() {
                   <a href="">Search</a>
                 </li>
                 <li>
-                  <a href="/home">Home</a>
-                </li>
-                <li>
-                  <a href="">My list</a>
-                </li>
-                <li>
                   <a href="/series">Series</a>
                 </li>
                 <li>
