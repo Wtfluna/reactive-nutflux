@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Serie from "../../types/serie";
 import axios from "axios";
 import "../../scss/pages/_seriePage.scss";
+import ReactPlayer from 'react-player';
 
 export async function loader({ params }) {
   const serie = await getSerie(params.serieId);
@@ -21,12 +22,7 @@ function SeriePage() {
   //Render
   return (
     <article className="serieSheet">
-      <iframe
-        width="660"
-        height="415"
-        src={`https://www.youtube.com/embed/${serie.trailer}`}
-        allowFullScreen
-      ></iframe>
+      <ReactPlayer url={serie.trailer} controls={true} />
       <h2 className="serieSheet__title">{serie.title}</h2>
       <h3 className="serieSheet__release_date">{serie.release_date}</h3>
       <h3 className="serieSheet__duration">{serie.duration}</h3>

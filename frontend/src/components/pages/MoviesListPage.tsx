@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
 import "../../scss/pages/_moviesList.scss";
+import { Link } from "react-router-dom";
 
 export async function loader() {
   const movies = await getMovies();

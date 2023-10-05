@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
 import ReactPlayer from 'react-player';
-import movieTrailer from 'movie-trailer';
 import "../../scss/pages/_moviePage.scss";
 
 export async function loader({ params }) {
