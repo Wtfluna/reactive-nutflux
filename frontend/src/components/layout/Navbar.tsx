@@ -10,21 +10,7 @@ function Navbar() {
 
   // Behavior
 
-  // Function to toggle the dropdown
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  // JSX for the dropdown content
-  const dropdownContent = (
-    <div className={`navbar__dropdown ${isDropdownOpen ? "open" : ""}`}>
-      <a href="">Change profile</a>
-      <a href="">Settings</a>
-      <a href="">Logout</a>
-    </div>
-  );
-
-  // Login/logout
+ // Login/logout
   useEffect(() => {
     watchLocalStorage(() => {
       const token = localStorage.getItem(authTokenKey);
@@ -37,6 +23,19 @@ function Navbar() {
     localStorage.removeItem(authTokenKey);
     setToken(null);
   };
+
+  // Function to toggle the dropdown
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const dropdownContent = (
+    <div className={`navbar__dropdown ${isDropdownOpen ? "open" : ""}`}>
+      <a href="">Change profile</a>
+      <a href="">Settings</a>
+      <a href="#" onClick={logout}>Logout</a>
+    </div>
+  );
 
   // Render
   return (

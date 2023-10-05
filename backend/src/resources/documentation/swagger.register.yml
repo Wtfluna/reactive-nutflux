@@ -1,6 +1,6 @@
 tags:
   name: Register
-  description: The register's managing API
+  description: The register managing API
 
 # --- Routes
 paths:

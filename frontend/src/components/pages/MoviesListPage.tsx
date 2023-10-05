@@ -1,7 +1,8 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
 import "../../scss/pages/_moviesList.scss";
+import { Link } from "react-router-dom";
 
 export async function loader() {
   const movies = await getMovies();
@@ -20,27 +21,24 @@ function MoviesListPage() {
 
   // Render
   return (
-    <div className="moviesList">
-      <h2 className="moviesList__listName">All movies</h2>
-      <div className="moviesList__items">
-        {movies.map((movie) => (
-          <div key={movie.id} className="moviesList__item">
-            <img
-              className="moviesList__poster"
-              src={movie.poster}
-              alt="poster"
-            />
-            <Link to={`/movie/${movie.id}`}>
-              <div className="moviesList__itemDetails">
+      <div className="moviesList">
+        <h2 className="moviesList__listName">All Movies</h2>
+        <div className="moviesList__items">
+          {movies.map((movie) => (
+            <div key={movie.id} className="moviesList__item">
+              <img className="moviesList__poster" src={movie.poster} alt="poster" />
+              <Link to={`/movies/${movie.id}`}>
+                  <div className="moviesList__itemDetails">
                 <h2 className="moviesList__title">{movie.title}</h2>
                 <h3 className="moviesList__duration">{movie.duration}</h3>
+                
               </div>
-            </Link>
-          </div>
-        ))}
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 export default MoviesListPage;

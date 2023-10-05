@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
+import ReactPlayer from 'react-player';
 import "../../scss/pages/_moviePage.scss";
 
 export async function loader({ params }) {
@@ -21,12 +22,7 @@ function MoviePage() {
   // Render
   return (
     <article className="movieSheet">
-      <iframe
-        width="660"
-        height="415"
-        src={`https://www.youtube.com/embed/${movie.trailer}`}
-        allowFullScreen
-      ></iframe>
+     <ReactPlayer url={movie.trailer} controls={true} />
       <h2 className="movieSheet__title">{movie.title}</h2>
       <h3 className="movieSheet__release_date">{movie.release_date}</h3>
       <h3 className="movieSheet__duration">{movie.duration}</h3>

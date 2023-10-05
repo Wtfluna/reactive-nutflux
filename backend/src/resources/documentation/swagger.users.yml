@@ -4,40 +4,6 @@ tags:
 
 # --- Routes
 paths:
-  /users:
-    post:
-      summary: Create a new user
-      tags: [User]
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                  description: User's username
-                account_id:
-                  type: number
-                  description: Link to the account
-                avatar:
-                  type: string
-                  description: User's avatar
-              required:
-                - username
-                - account_id
-                - avatar
-      responses:
-        200:
-          description: User is created
-          items:
-          $ref: '#/components/schemas/Users'
-        400:
-          description: Incorrect data
-        500:
-          description: Internal server error
-
   /users/{id}:
     get:
       summary: Retrieve one user

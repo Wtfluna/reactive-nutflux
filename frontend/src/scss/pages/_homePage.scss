@@ -1,7 +1,17 @@
 @use "../base/variables";
 
-.moviesHome,
-.seriesHome {
+.new{
+  height: 300px;
+  width: fit-content;
+  
+  &__title{
+    transform: translateX(20);
+  }
+  &__image{
+    height: fit-content;
+  }
+}
+.moviesHome, .seriesHome {
   width: 100%;
   height: auto;
   padding: 120px;
@@ -74,5 +84,23 @@
     padding-top: 110px;
     text-align: left;
     border-radius: 20px;
+  }
+}
+
+/* Media query for medium-sized screens */
+@media (max-width: 768px) {
+  #moviesCarousel,
+  #seriesCarousel {
+    width: 80%;
+    /* Adjust other styles for medium screens */
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 576px) {
+  #moviesCarousel,
+  #seriesCarousel {
+    width: 100%;
+    /* Adjust other styles for small screens */
   }
 }
