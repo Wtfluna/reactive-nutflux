@@ -67,4 +67,6 @@ This project is a Netflix-like video streaming application developed using Expre
 
 ---
 
+//TODO ajouter qu'il faut un .env dans le back pour que ça fonctionne
+
 `<repository-url>` and `<project-folder>`
