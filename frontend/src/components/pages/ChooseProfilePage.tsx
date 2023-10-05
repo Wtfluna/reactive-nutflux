@@ -30,12 +30,10 @@ function ChooseProfilePage() {
       {users.map((user) => (
         <div className="profile__card">
           <div className="profile__user">
-            <div key={user.id} className="userList">
-              <img
-                className="profile__img"
-                src={`./assets/avatars/${user.avatar}`}
-              />
-            </div>
+            <img
+              className="profile__img"
+              src={`./assets/avatars/${user.avatar}`}
+            />
           </div>
           <p className="profile__username">{user.username}</p>
         </div>
@@ -44,9 +42,8 @@ function ChooseProfilePage() {
       <div className="profile__card">
         <div className="profile__user">
           <img className="profile__plus" src="./assets/avatars/plus.png" />
-
-          <p className="profile__username">New</p>
         </div>
+        <p className="profile__username">New</p>
       </div>
       <div className="profile__button">
         <button>Manage Profiles</button>

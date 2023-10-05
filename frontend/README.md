@@ -26,13 +26,13 @@ This project is a Netflix-like video streaming application developed using Expre
   - Sass
   - Typescript
 - Database:
-  - PHPMyAdmin
+  - MySQL
 
 ## Project Structure
 
 - **`backend/`**: Backend server and API code.
+- **`backend/resources/documentation`**: Swagger documentation for API endpoints.
 - **`frontend/`**: Frontend React application.
-- **`ressources/documentation`**: Swagger documentation for API endpoints.
 
 ## Getting Started
 
@@ -40,13 +40,15 @@ This project is a Netflix-like video streaming application developed using Expre
 
    ```bash
    # In the backend folder
-   npm start
+   npm install
+   npm run dev
 
    # In the frontend folder
-   npm start
+   npm install
+   npm run dev
    ```
 
-2. Access the application in your web browser at `http://localhost:3000`.
+2. Access the application in your web browser at `http://localhost:5173`.
 
 ## Usage
 
@@ -56,7 +58,7 @@ This project is a Netflix-like video streaming application developed using Expre
 
 ## API Endpoints
 
-- API documentation is available in the `ressources/documentation` folder.
+- API documentation is available in the `backend/resources/documentation` folder.
 - Swagger is used for defining and testing API endpoints.
 
 ## Database
