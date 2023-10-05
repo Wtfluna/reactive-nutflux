@@ -1,11 +1,24 @@
 export default function WelcomePage() {
   return (
     <div>
+      <nav className="navbar">
+        <div className="navbar__container">
+          <div className="navbar__logo">
+            <a href="/">
+              <img src="./assets/NUTFLUX.png" alt="logo" />
+            </a>
+          </div>
+          <div className="navbar__links">
+            <ul>
+              <li><a href="/login">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       <div className="welcome__banner">
         <div className="intro">
-          <h1 className="intro__h">
-            Unlimited movies, TV shows and much more.
-          </h1>
+          <h1 className="intro__h">Unlimited movies, TV shows and much more.</h1>
           <p className="intro__p">
             Ready to watch? Enter your email to create an account.
           </p>

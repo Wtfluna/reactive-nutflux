@@ -45,10 +45,12 @@ function HomePage() {
   return (
     <div className="all">
       <div className="new">
-        <h2>What's new on Nutflux</h2>
+        <h2 className="new__title">What's new ?</h2>
+        <img className="new__image" /*src="./assets/banner.png"*/ alt="Oppenheimer banner"/>
       </div>
       <div className="moviesHome">
         <h2 className="moviesHome__listName">All movies</h2>
+        <div id="moviesCarousel">
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -82,10 +84,12 @@ function HomePage() {
             </div>
           ))}
         </Carousel>
+        </div>
       </div>
 
       <div className="seriesHome">
-        <h2 className="seriesHome__listName">All series</h2>
+        <h2 className="seriesHome__listName">All Series</h2>
+        <div id="seriesCarousel">
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -119,6 +123,7 @@ function HomePage() {
             </div>
           ))}
         </Carousel>
+        </div>
       </div>
     </div>
   );
