@@ -33,7 +33,7 @@ function Navbar() {
     <div className={`navbar__dropdown ${isDropdownOpen ? "open" : ""}`}>
       <a href="">Change profile</a>
       <a href="">Settings</a>
-      <a href="#" onClick={logout}>Logout</a>
+      <a href="/" onClick={logout}>Logout</a>
     </div>
   );
 
@@ -68,7 +68,7 @@ function Navbar() {
                   <a href="/movies">Movies</a>
                 </li>
                 <li>
-                  <a href="#">Discover by genre</a>
+                  <a href="#">Explore by genre</a>
                 </li>
               </>
             )}

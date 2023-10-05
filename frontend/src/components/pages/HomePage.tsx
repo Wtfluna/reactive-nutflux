@@ -5,6 +5,7 @@ import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../scss/pages/_homePage.scss";
+import { Link } from "react-router-dom";
 
 export async function combinedLoader() {
   const [movies, series] = await Promise.all([getMovies(), getSeries()]);
@@ -75,10 +76,12 @@ function HomePage() {
                     src={movie.poster}
                     alt="poster"
                   />
+                  <Link to={`/movie/${movie.id}`}>
                   <div className="moviesHome__itemDetails">
                     <h2 className="moviesHome__title">{movie.title}</h2>
                     <h3 className="moviesHome__duration">{movie.duration}</h3>
                   </div>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -114,10 +117,13 @@ function HomePage() {
                     src={serie.poster}
                     alt="poster"
                   />
-                  <div className="seriesHome__itemDetails">
+                  <Link to={`/serie/${serie.id}`}><div className="seriesHome__itemDetails">
+                  
                     <h2 className="seriesHome__title">{serie.title}</h2>
                     <h3 className="seriesHome__duration">{serie.duration}</h3>
+                    
                   </div>
+                  </Link>
                 </div>
               ))}
             </div>

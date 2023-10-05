@@ -22,7 +22,7 @@ function MoviePage() {
   // Render
   return (
     <article className="movieSheet">
-     <ReactPlayer url={movie.trailer} controls={true} />
+     <ReactPlayer className="movieSheet__trailer" width="" url={movie.trailer} controls={false} playing={true}/>
       <h2 className="movieSheet__title">{movie.title}</h2>
       <h3 className="movieSheet__release_date">{movie.release_date}</h3>
       <h3 className="movieSheet__duration">{movie.duration}</h3>
