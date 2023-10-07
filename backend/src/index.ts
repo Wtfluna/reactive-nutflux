@@ -14,6 +14,7 @@ import { ActorsController } from './controllers/actors.controller'
 import { RegisterController } from './controllers/register.controller'
 import { LoginController } from './controllers/login.controller'
 import { UserController } from './controllers/users.controller'
+import { ListsController } from './controllers/lists.controller'
 
 // On créé une nouvelle "application" express
 
@@ -47,6 +48,8 @@ app.use('/register', RegisterController)
 app.use('/login', LoginController)
 
 app.use('/users', UserController)
+
+app.use('/lists', ListsController)
 
 /*
  * Swagger (pour voir le contrat de l'API)

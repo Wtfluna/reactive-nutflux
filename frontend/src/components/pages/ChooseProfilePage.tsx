@@ -1,5 +1,5 @@
-import { useLoaderData } from "react-router-dom";
-import { authTokenKey } from "../../localStorage";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { authTokenKey, userIdKey } from "../../localStorage";
 import User from "../../types/user";
 import axios from "axios";
 
@@ -20,10 +20,13 @@ async function getUsers(): Promise<User[]> {
 function ChooseProfilePage() {
   // State
   const users = useLoaderData() as User[];
-
+  const navigate = useNavigate();
   // Behavior
   const showUserCreationForm = () => {};
-
+  const chooseThisUser = (userId: number) => {
+    localStorage.setItem(userIdKey, userId.toString());
+    navigate("/home");
+  };
   // Render
   return (
     <div className="profile">
@@ -32,10 +35,12 @@ function ChooseProfilePage() {
       {users.map((user) => (
         <div key={user.id} className="profile__card">
           <div className="profile__user">
-            <img
-              className="profile__img"
-              src={`./assets/avatars/${user.avatar}`}
-            />
+            <a onClick={() => chooseThisUser(user.id)}>
+              <img
+                className="profile__img"
+                src={`./assets/avatars/${user.avatar}`}
+              />
+            </a>
           </div>
           <p className="profile__username">{user.username}</p>
         </div>

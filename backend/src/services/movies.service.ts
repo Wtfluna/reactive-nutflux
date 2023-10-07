@@ -47,7 +47,7 @@ export class MoviesService {
     })
   }
 
-  findByGenreId(genreId: number): Promise<Movie> {
+  findByGenreId(genreId: number): Promise<Movie[]> {
     return new Promise((resolve, reject) => {
       const connection = mysql.createConnection({
         host: process.env.DATABASE_SERVER,
@@ -62,7 +62,30 @@ export class MoviesService {
           if (err) {
             reject(err)
           } else {
-            resolve(res as unknown as Movie)
+            resolve(res as unknown as Movie[])
+          }
+        }
+      )
+    })
+  }
+  findByListId(listId: number): Promise<Movie[]> {
+    return new Promise((resolve, reject) => {
+      const connection = mysql.createConnection({
+        host: process.env.DATABASE_SERVER,
+        user: process.env.DATABASE_USERNAME,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_DATABASE
+      })
+      connection.query(
+        `SELECT * FROM movies 
+LEFT JOIN movies_lists ON movies_lists.movie_id = movies.id
+WHERE list_id = ?`,
+        [listId],
+        (err, res) => {
+          if (err) {
+            reject(err)
+          } else {
+            resolve(res as unknown as Movie[])
           }
         }
       )

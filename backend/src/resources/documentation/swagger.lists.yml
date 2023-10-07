@@ -10,7 +10,7 @@ paths:
       tags: [List]
       parameters:
         - in: path
-          name: id
+          name: user_id
           schema:
             type: integer
           required: true

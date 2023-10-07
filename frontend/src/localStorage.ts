@@ -8,3 +8,5 @@ export function watchLocalStorage(callbackAfter = function () {}) {
   };
   localStorage["setItem"] = newMethod.bind(localStorage);
 }
+
+export const userIdKey = "userId";
