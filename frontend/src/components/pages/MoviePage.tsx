@@ -12,7 +12,7 @@ export async function loader({ params }) {
 async function getMovie(id: number): Promise<Movie> {
   // TODO mettre dans .env (API_URL)
   const response = await axios.get(`http://localhost:3000/movies/${id}`);
-  return response.data as Movie;
+  return response.data[0] as Movie;
 }
 
 function MoviePage() {
