@@ -21,24 +21,27 @@ function MoviesListPage() {
 
   // Render
   return (
-      <div className="moviesList">
-        <h2 className="moviesList__listName">All Movies</h2>
-        <div className="moviesList__items">
-          {movies.map((movie) => (
-            <div key={movie.id} className="moviesList__item">
-              <img className="moviesList__poster" src={movie.poster} alt="poster" />
-              <Link to={`/movies/${movie.id}`}>
-                  <div className="moviesList__itemDetails">
+    <div className="moviesList">
+      <h2 className="moviesList__listName">All Movies</h2>
+      <div className="moviesList__items">
+        {movies.map((movie) => (
+          <div key={movie.id} className="moviesList__item">
+            <img
+              className="moviesList__poster"
+              src={movie.poster}
+              alt="poster"
+            />
+            <Link to={`/movie/${movie.id}`}>
+              <div className="moviesList__itemDetails">
                 <h2 className="moviesList__title">{movie.title}</h2>
                 <h3 className="moviesList__duration">{movie.duration}</h3>
-                
               </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+            </Link>
+          </div>
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 export default MoviesListPage;

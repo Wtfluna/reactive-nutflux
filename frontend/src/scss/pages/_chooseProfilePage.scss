@@ -50,20 +50,21 @@
     border-radius: 5px;
   }
 
-  &__button {
-    margin-top: 40px;
-    color: gray;
-    background-color: variables.$background-color;
-    border: 2px solid gray;
-    width: 150px;
-    height: 40px;
+  button {
+    color: variables.$light-grey;
+    background-color: variables.$button-background-color;
+    border: transparent;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
     font-family: variables.$global-font-family;
-    display: table;
-  }
 
-  button:hover {
-    border: 2px solid variables.$title-color;
-    color: variables.$title-color;
+    &:hover {
+      background-color: variables.$hover-button-background-color;
+      transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+      cursor: pointer;
+    }
   }
 }
 

@@ -20,6 +20,8 @@ async function getUsers(): Promise<User[]> {
 function ChooseProfilePage() {
   // State
   const users = useLoaderData() as User[];
+
+  // Behavior
   const showUserCreationForm = () => {};
 
   // Render
@@ -28,7 +30,7 @@ function ChooseProfilePage() {
       <h1 className="profile__title">Who's watching?</h1>
 
       {users.map((user) => (
-        <div className="profile__card">
+        <div key={user.id} className="profile__card">
           <div className="profile__user">
             <img
               className="profile__img"

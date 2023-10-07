@@ -2,11 +2,11 @@ import { useLoaderData } from "react-router-dom";
 import Serie from "../../types/serie";
 import axios from "axios";
 import "../../scss/pages/_seriePage.scss";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 
 export async function loader({ params }) {
   const serie = await getSerie(params.serieId);
-  return { serie };
+  return serie;
 }
 
 async function getSerie(id: number): Promise<Serie> {
@@ -17,7 +17,7 @@ async function getSerie(id: number): Promise<Serie> {
 
 function SeriePage() {
   //State
-  const { serie } = useLoaderData() as Serie;
+  const serie = useLoaderData() as Serie;
 
   //Render
   return (

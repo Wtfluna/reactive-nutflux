@@ -17,6 +17,7 @@ import SeriePage, {
 import SeriesListPage, {
   loader as seriesListLoader,
 } from "./components/pages/SeriesListPage";
+import Footer from "./components/layout/Footer";
 
 const router = createBrowserRouter([
   {
@@ -80,15 +81,6 @@ const router = createBrowserRouter([
     loader: movieLoader,
   },
   {
-    path: "/serie/:serieId",
-    element: (
-      <>
-        <SeriePage />
-      </>
-    ),
-    loader: serieLoader,
-  },
-  {
     path: "/series",
     element: (
       <>
@@ -97,6 +89,15 @@ const router = createBrowserRouter([
     ),
     loader: seriesListLoader,
   },
+  {
+    path: "/serie/:serieId",
+    element: (
+      <>
+        <SeriePage />
+      </>
+    ),
+    loader: serieLoader,
+  },
 ]);
 
 export default function App() {
@@ -104,7 +105,29 @@ export default function App() {
     <>
       <Navbar />
       <RouterProvider router={router} />
-      {/* TODO: ajouter footer quand il sera prêt */}
+      <Footer />
     </>
   );
 }
+
+/*
+
+Choose profile must store the chosen user and redirect to "home" (front)
+
+Logout must clear user too (front)
+
+Add "choose profile" link in navbar when logged in
+
+Home must fetch the lists (require backend)
+
+Movie should have the director, genre and maybe actors (require backend)
+
+Could be good to have JWT token before deploying (require backend)
+
+Add .env in front with API_URL
+
+Deploy backend on Netlify (specify env variables), test it
+
+Deploy front on Netlify (specify env variables), test it
+
+*/

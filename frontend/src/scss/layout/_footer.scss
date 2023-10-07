@@ -1,0 +1,17 @@
+@use "../base/variables";
+
+.footer {
+  display: grid;
+  grid-column: 1 / 3;
+  justify-content: space-around;
+  justify-items: center;
+
+  &__title {
+    font-family: variables.$global-font-family;
+    color: variables.$lavender;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+// TODO : continuer style footer

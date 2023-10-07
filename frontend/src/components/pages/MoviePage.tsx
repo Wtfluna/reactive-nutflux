@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import axios from "axios";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 import "../../scss/pages/_moviePage.scss";
 
 export async function loader({ params }) {
@@ -12,7 +12,7 @@ export async function loader({ params }) {
 async function getMovie(id: number): Promise<Movie> {
   // TODO mettre dans .env (API_URL)
   const response = await axios.get(`http://localhost:3000/movies/${id}`);
-  return response.data[0] as Movie;
+  return response.data as Movie;
 }
 
 function MoviePage() {
@@ -22,7 +22,7 @@ function MoviePage() {
   // Render
   return (
     <article className="movieSheet">
-     <ReactPlayer url={movie.trailer} controls={true} />
+      <ReactPlayer url={movie.trailer} controls={true} />
       <h2 className="movieSheet__title">{movie.title}</h2>
       <h3 className="movieSheet__release_date">{movie.release_date}</h3>
       <h3 className="movieSheet__duration">{movie.duration}</h3>
