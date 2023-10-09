@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../scss/pages/_homePage.scss";
 import { Link } from "react-router-dom";
+import Banner from "../Banner";
 
 export async function combinedLoader() {
   const [movies, series] = await Promise.all([getMovies(), getSeries()]);
@@ -43,12 +44,15 @@ function HomePage() {
   const movieGap = 20;
   const serieGap = 20;
 
+  const slides = [
+    { imageUrl: './assets/lupin.png' },
+    { imageUrl: './assets/barbie.png' },
+    { imageUrl: './assets/oppenheimer.png' },
+  ];
+
   return (
     <div className="all">
-      <div className="new">
-        <h2 className="new__title">What's new ?</h2>
-        <img className="new__image" /*src="./assets/banner.png"*/ alt="Oppenheimer banner"/>
-      </div>
+      <Banner slides={slides} slideInterval={3000} />
       <div className="moviesHome">
         <h2 className="moviesHome__listName">All movies</h2>
         <div id="moviesCarousel">

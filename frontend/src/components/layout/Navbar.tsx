@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { authTokenKey, watchLocalStorage } from "../../localStorage";
 
 function Navbar() {
-  // State to track whether the dropdown is open
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [token, setToken] = useState<string | null>(
     localStorage.getItem(authTokenKey)
@@ -10,7 +10,6 @@ function Navbar() {
 
   // Behavior
 
- // Login/logout
   useEffect(() => {
     watchLocalStorage(() => {
       const token = localStorage.getItem(authTokenKey);
@@ -18,13 +17,13 @@ function Navbar() {
     });
   }, [setToken]);
 
-  // Function to log out and clear local storage
+
   const logout = () => {
     localStorage.removeItem(authTokenKey);
     setToken(null);
   };
 
-  // Function to toggle the dropdown
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };

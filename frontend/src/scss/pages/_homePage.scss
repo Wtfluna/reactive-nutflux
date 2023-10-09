@@ -1,16 +1,5 @@
 @use "../base/variables";
 
-.new{
-  height: 300px;
-  width: fit-content;
-  
-  &__title{
-    transform: translateX(20);
-  }
-  &__image{
-    height: fit-content;
-  }
-}
 .moviesHome, .seriesHome {
   width: 100%;
   height: auto;
@@ -65,13 +54,13 @@
     opacity: 0;
     -webkit-transition: 450ms opacity;
     transition: 450ms opacity;
-    padding: 12px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-
+    padding-top: 280px;
+    padding-left: 14px;
+    padding-right: 14px;
     &:hover {
       opacity: 1;
     }
@@ -79,28 +68,21 @@
 
   &__itemDetails,
   &__title {
+    width: 250px;
     color: variables.$title-color;
-    margin: 0 0 10px 0;
-    padding-top: 110px;
+    margin: 0;
+
     text-align: left;
     border-radius: 20px;
   }
 }
 
+
 /* Media query for medium-sized screens */
 @media (max-width: 768px) {
   #moviesCarousel,
   #seriesCarousel {
-    width: 80%;
+    width: 70%;
     /* Adjust other styles for medium screens */
-  }
-}
-
-/* Media query for small screens */
-@media (max-width: 576px) {
-  #moviesCarousel,
-  #seriesCarousel {
-    width: 100%;
-    /* Adjust other styles for small screens */
   }
 }

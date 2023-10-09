@@ -80,3 +80,20 @@
     background-color: variables.$navbar-background-color;
   }
 }
+@media screen and (max-width: 768px) {
+  .navbar {
+    &__logo {
+      img {
+        height: 32px; 
+      }
+    }
+
+    &__links {
+      display: none; 
+    }
+
+    &__burger-menu {
+      display: block; 
+    }
+  }
+}
