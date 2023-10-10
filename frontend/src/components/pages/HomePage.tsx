@@ -31,9 +31,9 @@ function HomePage() {
   };
 
   const slides = [
-    { imageUrl: './assets/lupin.png' },
-    { imageUrl: './assets/barbie.png' },
-    { imageUrl: './assets/oppenheimer.png' },
+    { imageUrl: './assets/lupin.png',text: 'Watch the new season now!'},
+    { imageUrl: './assets/barbie.png', text: 'New'},
+    { imageUrl: './assets/oppenheimer.png', text: 'New' },
   ];
 
   return (
