@@ -77,9 +77,11 @@ export class MoviesService {
         database: process.env.DATABASE_DATABASE
       })
       connection.query(
-        `SELECT * FROM movies 
-LEFT JOIN movies_lists ON movies_lists.movie_id = movies.id
-WHERE list_id = ?`,
+        `
+        SELECT * FROM movies 
+        LEFT JOIN movies_lists ON movies_lists.movie_id = movies.id
+        WHERE list_id = ?
+        `,
         [listId],
         (err, res) => {
           if (err) {

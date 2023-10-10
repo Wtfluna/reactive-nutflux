@@ -1,10 +1,6 @@
-import Movie from "./movie";
+import { Movie } from "./movies";
 
-interface List {
-  id: number;
+export interface List {
   name: string;
-  user_id: number;
   movies: Movie[];
 }
-
-export default List;
