@@ -2,11 +2,10 @@ import { useLoaderData } from "react-router-dom";
 import Movie from "../../types/movie";
 import Serie from "../../types/serie";
 import axios from "axios";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../scss/pages/_homePage.scss";
-import { Link } from "react-router-dom";
 import Banner from "../Banner";
+import MovieCarousel from "../MovieCarousel";
+import SerieCarousel from "../SerieCarousel"; 
 
 export async function combinedLoader() {
   const [movies, series] = await Promise.all([getMovies(), getSeries()]);
@@ -31,19 +30,6 @@ function HomePage() {
     series: Serie[];
   };
 
-  // Divise les films en groupes de 6
-  const chunkedMovies = [];
-  for (let i = 0; i < movies.length; i += 6) {
-    chunkedMovies.push(movies.slice(i, i + 6));
-  }
-  // Divise les séries en groupes de 6
-  const chunkedSeries = [];
-  for (let i = 0; i < series.length; i += 6) {
-    chunkedSeries.push(series.slice(i, i + 6));
-  }
-  const movieGap = 20;
-  const serieGap = 20;
-
   const slides = [
     { imageUrl: './assets/lupin.png' },
     { imageUrl: './assets/barbie.png' },
@@ -55,85 +41,12 @@ function HomePage() {
       <Banner slides={slides} slideInterval={3000} />
       <div className="moviesHome">
         <h2 className="moviesHome__listName">All movies</h2>
-        <div id="moviesCarousel">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          dynamicHeight={false}
-          infiniteLoop={true}
-        >
-          {chunkedMovies.map((movieGroup, index) => (
-            <div key={index} className="moviesHome__carouselSlide">
-              {movieGroup.map((movie, movieIndex) => (
-                <div
-                  key={movie.id}
-                  className="moviesHome__item"
-                  style={{
-                    marginRight:
-                      movieIndex < movieGroup.length - 1
-                        ? `${movieGap}px`
-                        : "0",
-                  }}
-                >
-                  <img
-                    className="moviesHome__poster"
-                    src={movie.poster}
-                    alt="poster"
-                  />
-                  <Link to={`/movie/${movie.id}`}>
-                  <div className="moviesHome__itemDetails">
-                    <h2 className="moviesHome__title">{movie.title}</h2>
-                    <h3 className="moviesHome__duration">{movie.duration}</h3>
-                  </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          ))}
-        </Carousel>
-        </div>
+        <MovieCarousel movies={movies} />
       </div>
 
       <div className="seriesHome">
         <h2 className="seriesHome__listName">All Series</h2>
-        <div id="seriesCarousel">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          dynamicHeight={false}
-          infiniteLoop={true}
-        >
-          {chunkedSeries.map((serieGroup, index) => (
-            <div key={index} className="seriesHome__carouselSlide">
-              {serieGroup.map((serie, serieIndex) => (
-                <div
-                  key={serie.id}
-                  className="seriesHome__item"
-                  style={{
-                    marginRight:
-                      serieIndex < serieGroup.length - 1
-                        ? `${serieGap}px`
-                        : "0",
-                  }}
-                >
-                  <img
-                    className="seriesHome__poster"
-                    src={serie.poster}
-                    alt="poster"
-                  />
-                  <Link to={`/serie/${serie.id}`}><div className="seriesHome__itemDetails">
-                  
-                    <h2 className="seriesHome__title">{serie.title}</h2>
-                    <h3 className="seriesHome__duration">{serie.duration}</h3>
-                    
-                  </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          ))}
-        </Carousel>
-        </div>
+        <SerieCarousel series={series} />
       </div>
     </div>
   );
