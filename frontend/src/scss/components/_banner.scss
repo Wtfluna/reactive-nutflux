@@ -3,7 +3,7 @@
     display: flex;
     overflow: hidden;
     width: fit-content;
-    height: 650px; 
+    height: 670px; 
     
     &__text {
     position: absolute;
@@ -11,8 +11,8 @@
     left: 10px;  
     color: white; 
     font-weight: 900;
-      font-size: 3rem;
-      text-shadow: rgb(0, 0, 0) 5px 0 10px;font-weight: 900;
+    font-size: 3rem;
+    text-shadow: rgb(0, 0, 0) 5px 0 10px;
     padding: 2px 10px; 
   }
   
@@ -22,7 +22,7 @@
   }
   
   &__slide_active {
-    transform: translateY(0);
+    transform: translateX(0);
   }
   
   img {
