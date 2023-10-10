@@ -22,7 +22,7 @@ function SeriePage() {
   //Render
   return (
     <article className="serieSheet">
-      <ReactPlayer url={serie.trailer} controls={true} />
+      <ReactPlayer className="serieSheet__trailer" url={serie.trailer} width="" controls={false} playing={true}/>
       <h2 className="serieSheet__title">{serie.title}</h2>
       <h3 className="serieSheet__release_date">{serie.release_date}</h3>
       <h3 className="serieSheet__duration">{serie.duration}</h3>

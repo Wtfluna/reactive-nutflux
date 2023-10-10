@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { authTokenKey, watchLocalStorage } from "../../localStorage";
 
 function Navbar() {
-  // State to track whether the dropdown is open
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [token, setToken] = useState<string | null>(
     localStorage.getItem(authTokenKey)
@@ -10,7 +10,6 @@ function Navbar() {
 
   // Behavior
 
- // Login/logout
   useEffect(() => {
     watchLocalStorage(() => {
       const token = localStorage.getItem(authTokenKey);
@@ -18,13 +17,13 @@ function Navbar() {
     });
   }, [setToken]);
 
-  // Function to log out and clear local storage
+
   const logout = () => {
     localStorage.removeItem(authTokenKey);
     setToken(null);
   };
 
-  // Function to toggle the dropdown
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -33,7 +32,7 @@ function Navbar() {
     <div className={`navbar__dropdown ${isDropdownOpen ? "open" : ""}`}>
       <a href="">Change profile</a>
       <a href="">Settings</a>
-      <a href="#" onClick={logout}>Logout</a>
+      <a href="/" onClick={logout}>Logout</a>
     </div>
   );
 
@@ -56,19 +55,13 @@ function Navbar() {
                   <a href="">Search</a>
                 </li>
                 <li>
-                  <a href="/home">Home</a>
-                </li>
-                <li>
-                  <a href="">My list</a>
-                </li>
-                <li>
                   <a href="/series">Series</a>
                 </li>
                 <li>
                   <a href="/movies">Movies</a>
                 </li>
                 <li>
-                  <a href="#">Discover by genre</a>
+                  <a href="#">Explore by genre</a>
                 </li>
               </>
             )}

@@ -9,20 +9,20 @@ body {
 
 .welcome__banner {
   width: auto;
-  padding: 32px 0;
+  padding: 0;
   margin: 0;
 
   .intro {
     width: auto;
     height: 700px;
-    padding: 0px 20px;
+    padding: 0;
     text-align: center;
     background-image: url("./assets/popcorn.png");
     background-size: cover;
-    height: 460px;
+    height: 500px;
 
     &__h {
-      padding-top: 7rem;
+      padding-top: 8rem;
       font-weight: 900;
       font-size: 2.5rem;
       text-shadow: rgb(0, 0, 0) 5px 0 10px;

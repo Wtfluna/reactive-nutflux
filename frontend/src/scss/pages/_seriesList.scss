@@ -36,7 +36,7 @@
   }
 
   &__poster {
-    width: auto;
+    width: 250px;
     height: 350px;
     border-radius: 20px;
   }
@@ -54,12 +54,13 @@
     opacity: 0;
     -webkit-transition: 450ms opacity;
     transition: 450ms opacity;
-    padding: 0;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-
+    padding-top: 290px;
+    padding-left: 14px;
+    padding-right: 14px;
     &:hover {
       opacity: 1;
     }
@@ -67,10 +68,10 @@
 
   &__itemDetails,
   &__title {
-    width: 260px;
+    width: 240px;
     color: variables.$title-color;
-    margin: 0 0 82px 0;
-    padding-top: 110px;
+    margin: 0;
+
     text-align: left;
     border-radius: 20px;
   }

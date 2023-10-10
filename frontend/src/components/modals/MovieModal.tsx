@@ -23,7 +23,6 @@ export default function MovieModal ({
         <dialog id={label}>
             
             <>
-            
             <button onClick={() => toggleMovieModal(label)}>Close
             </button>
             </>
