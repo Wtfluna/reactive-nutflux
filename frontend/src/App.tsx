@@ -3,7 +3,7 @@ import Navbar from "./components/layout/Navbar";
 import WelcomePage from "./components/pages/WelcomePage";
 import RegisterPage from "./components/pages/RegisterPage";
 import LoginPage from "./components/pages/LoginPage";
-import HomePage, { combinedLoader } from "./components/pages/HomePage";
+import HomePage, { loader as listLoader } from "./components/pages/HomePage";
 import ChooseProfilePage, {
   loader as usersLoader,
 } from "./components/pages/ChooseProfilePage";
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         <HomePage />
       </>
     ),
-    loader: combinedLoader,
+    loader: listLoader,
   },
   {
     path: "/movies",

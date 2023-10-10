@@ -2,6 +2,7 @@ import mysql, { RowDataPacket } from 'mysql2/promise'
 import * as dotenv from 'dotenv'
 import { List } from '~/types/lists'
 import { MoviesService } from './movies.service'
+import { SeriesService } from './series.service'
 
 dotenv.config()
 
@@ -22,7 +23,8 @@ export class ListsService {
       rows.map(async (row) => {
         return {
           name: row['name'],
-          movies: await new MoviesService().findByListId(row['id'])
+          movies: await new MoviesService().findByListId(row['id']),
+          series: await new SeriesService().findByListId(row['id'])
         }
       })
     )

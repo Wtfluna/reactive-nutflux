@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { authTokenKey, watchLocalStorage } from "../../localStorage";
 
 function Navbar() {
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [token, setToken] = useState<string | null>(
     localStorage.getItem(authTokenKey)
@@ -17,12 +16,10 @@ function Navbar() {
     });
   }, [setToken]);
 
-
   const logout = () => {
-    localStorage.removeItem(authTokenKey);
+    localStorage.clear();
     setToken(null);
   };
-
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,7 +29,9 @@ function Navbar() {
     <div className={`navbar__dropdown ${isDropdownOpen ? "open" : ""}`}>
       <a href="">Change profile</a>
       <a href="">Settings</a>
-      <a href="/" onClick={logout}>Logout</a>
+      <a href="/" onClick={logout}>
+        Logout
+      </a>
     </div>
   );
 
@@ -41,10 +40,16 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar__container">
         <div className="navbar__logo">
-          {" "}
-          <a href="/home">
-            <img src="./assets/NUTFLUX.png" alt="logo" />
-          </a>
+          {token && (
+            <a href="/home">
+              <img src="./assets/NUTFLUX.png" alt="logo" />
+            </a>
+          )}
+          {!token && (
+            <a href="/">
+              <img src="./assets/NUTFLUX.png" alt="logo" />
+            </a>
+          )}
         </div>
 
         <div className="navbar__links">
