@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../scss/components/_banner.scss';
 
 const Banner = ({ slides, slideInterval }) => {
