@@ -22,9 +22,9 @@
 
   &__logo {
     img {
+      position: absolute;
       width: auto;
       height: 48px;
-      
     }
   }
 
@@ -84,16 +84,16 @@
   .navbar {
     &__logo {
       img {
-        height: 32px; 
+        height: 32px;
       }
     }
 
     &__links {
-      display: none; 
+      display: none;
     }
 
     &__burger-menu {
-      display: block; 
+      display: block;
     }
   }
 }

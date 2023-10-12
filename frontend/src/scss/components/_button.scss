@@ -1,0 +1,18 @@
+@use "../base/variables";
+
+button {
+  color: variables.$light-grey;
+  background-color: variables.$button-background-color;
+  border: transparent;
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: variables.$global-font-family;
+
+  &:hover {
+    background-color: variables.$hover-button-background-color;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    cursor: pointer;
+  }
+}

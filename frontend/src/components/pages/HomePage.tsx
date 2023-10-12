@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../scss/pages/_homePage.scss";
 import { Link, useLoaderData } from "react-router-dom";
-import Banner from "../Banner";
+import Banner from "../layout/Banner";
 import { List } from "../../types/list";
 import { userIdKey } from "../../localStorage";
 
@@ -27,16 +27,16 @@ async function getLists(): Promise<List[]> {
 function HomePage() {
   const lists = useLoaderData() as List[];
 
-  // // Divise les films en groupes de 6
-  // const chunkedMovies = [];
-  // for (let i = 0; i < movies.length; i += 6) {
-  //   chunkedMovies.push(movies.slice(i, i + 6));
-  // }
-  // // Divise les séries en groupes de 6
-  // const chunkedSeries = [];
-  // for (let i = 0; i < series.length; i += 6) {
-  //   chunkedSeries.push(series.slice(i, i + 6));
-  // }
+  // Divise les films en groupes de 6
+  const chunkedMovies = [];
+  for (let i = 0; i < lists.length; i += 6) {
+    chunkedMovies.push(lists.slice(i, i + 6));
+  }
+  // Divise les séries en groupes de 6
+  const chunkedSeries = [];
+  for (let i = 0; i < lists.length; i += 6) {
+    chunkedSeries.push(lists.slice(i, i + 6));
+  }
   const movieGap = 20;
   const serieGap = 20;
 
@@ -51,12 +51,6 @@ function HomePage() {
       <div className="new">
         <h2 className="new__title">What's new ?</h2>
         <Banner slides={slides} slideInterval={3000} />
-
-        {/* <img
-          className="new__image"
-          src="./assets/banner.png"
-          alt="Oppenheimer banner"
-        /> */}
       </div>
       <h2 className="movie__title">My Movie's List</h2>
       {lists.map((list) => (

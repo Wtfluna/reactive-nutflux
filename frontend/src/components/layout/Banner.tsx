@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import "../scss/components/_banner.scss"
+import { useState, useEffect } from "react";
+import "../../scss/components/_banner.scss";
 
 const Banner = ({ slides, slideInterval }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -20,7 +20,7 @@ const Banner = ({ slides, slideInterval }) => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`slide ${index === currentSlideIndex ? 'active' : ''}`}
+          className={`slide ${index === currentSlideIndex ? "active" : ""}`}
         >
           <img src={slide.imageUrl} alt={`slide ${index + 1}`} />
         </div>
