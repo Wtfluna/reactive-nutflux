@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 import Movie from '../../types/movie';
 import Serie from '../../types/serie';
 import '../../scss/pages/_homePage.scss';
-import Banner from '../Banner';
 import MovieCarousel from '../MovieCarousel';
 import SerieCarousel from '../SerieCarousel';
 
@@ -42,15 +41,15 @@ function HomePage() {
     setFilteredSeries(series);
   }, [series]);
 
-  const slides = [
-    { imageUrl: './assets/lupin.png', text: 'Watch the new season now!' },
-    {/*{ imageUrl: './assets/barbie.png'},
-  { imageUrl: './assets/oppenheimer.png'},*/}
-  ];
 
   return (
     <div className="all">
-      <Banner slides={slides} slideInterval={0} />
+      <a href="/serie/7">
+        <div className="banner">
+      <img src="./assets/lupin.png" alt="Banner Image" />
+      <div className="banner__text">Watch the new season now!</div>
+    </div>
+    </a>
       <div className="moviesHome">
         <h2 className="moviesHome__listName">All movies</h2>
         <div className="carousel_container">
