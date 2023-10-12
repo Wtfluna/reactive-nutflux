@@ -16,7 +16,8 @@
   }
 
   &__item {
-    width: 250px;
+    
+    background-repeat: no;
     height: 350px;
     border-radius: 20px;
     padding-bottom: 400px;
@@ -71,18 +72,39 @@
     width: 250px;
     color: variables.$title-color;
     margin: 0;
-
     text-align: left;
     border-radius: 20px;
   }
 }
+.banner {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 670px;
+  position: relative;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-/* Media query for medium-sized screens */
-@media (max-width: 768px) {
-  #moviesCarousel,
-  #seriesCarousel {
-    width: 70%;
-    /* Adjust other styles for medium screens */
+  &__text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    text-shadow: rgb(0, 0, 0) 5px 0 10px;
+    padding: 2px 10px;
+    width: 50%;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      padding: 5px 10px;
+      bottom: 5px;
+      width: 90%;
+    }
   }
 }

@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
-import Movie from "../../types/movie";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import "../../scss/pages/_moviesList.scss";
+import SearchBar from "../SearchBar"; // Import the SearchBar component
 import { Link } from "react-router-dom";
+import "../../scss/pages/_moviesList.scss";
+import Movie from "../../types/movie";
 
 export async function loader() {
   const movies = await getMovies();
@@ -16,15 +17,35 @@ async function getMovies(): Promise<Movie[]> {
 }
 
 function MoviesListPage() {
-  // State
-  const movies = useLoaderData() as Movie[];
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Render
+  useEffect(() => {
+    async function fetchData() {
+      const movieData = await getMovies();
+      setMovies(movieData);
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Filter movies based on search query
+    const filtered = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredMovies(filtered);
+  }, [movies, searchQuery]);
+
   return (
     <div className="moviesList">
       <h2 className="moviesList__listName">All Movies</h2>
+
+      {/* Use the SearchBar component */}
+      <SearchBar onSearch={setSearchQuery} />
+
       <div className="moviesList__items">
-        {movies.map((movie) => (
+        {filteredMovies.map((movie) => (
           <div key={movie.id} className="moviesList__item">
             <img
               className="moviesList__poster"

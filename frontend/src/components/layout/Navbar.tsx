@@ -57,23 +57,20 @@ function Navbar() {
             {token && (
               <>
                 <li>
-                  <a href="">Search</a>
-                </li>
-                <li>
                   <a href="/series">Series</a>
                 </li>
                 <li>
                   <a href="/movies">Movies</a>
                 </li>
                 <li>
-                  <a href="#">Explore by genre</a>
+                  <a href="">Explore by genre</a>
                 </li>
               </>
             )}
             {token && (
               <>
                 <li>
-                  <a href="#" onClick={toggleDropdown}>
+                  <a href="" onClick={toggleDropdown}>
                     Profile
                   </a>
                   {dropdownContent}

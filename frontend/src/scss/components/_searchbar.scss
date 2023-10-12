@@ -1,0 +1,16 @@
+.searchbar {
+    display: flex;
+    justify-content: flex-end; /* Align the search bar to the right */
+    margin-right: 3.5rem; /* Add some right margin for spacing */
+  }
+  
+  .searchbar input {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.63);
+    border: transparent;
+    border-radius: 2px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+  }
+  
