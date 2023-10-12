@@ -11,7 +11,6 @@ const Banner = ({ slides, slideInterval }) => {
       setCurrentSlideIndex(nextSlideIndex);
     }, slideInterval);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, [currentSlideIndex, slideInterval, slides.length]);
 
@@ -19,11 +18,13 @@ const Banner = ({ slides, slideInterval }) => {
     <div className="banner">
       {slides.map((slide, index) => (
         <div
+        onClick={() => {
+          window.location.href = "/serie/7";}} 
           key={index}
           className={`banner__slide ${index === currentSlideIndex ? 'banner__slide_active' : ''}`}
         >
           <img src={slide.imageUrl} alt={`slide ${index + 1}`} />
-          <div className="banner__text">{slide.text}</div> {/* Add this line */}
+          <div className="banner__text">{slide.text}</div>
         </div>
       ))}
     </div>

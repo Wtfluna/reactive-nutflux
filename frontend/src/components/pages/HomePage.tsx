@@ -7,7 +7,6 @@ import '../../scss/pages/_homePage.scss';
 import Banner from '../Banner';
 import MovieCarousel from '../MovieCarousel';
 import SerieCarousel from '../SerieCarousel';
-import SearchBar from '../SearchBar'; // Import the SearchBar component
 
 export async function combinedLoader() {
   const [movies, series] = await Promise.all([getMovies(), getSeries()]);
@@ -32,44 +31,39 @@ function HomePage() {
     series: Serie[];
   };
 
-  const [searchQuery, setSearchQuery] = useState('');
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>(movies);
   const [filteredSeries, setFilteredSeries] = useState<Serie[]>(series);
 
   useEffect(() => {
-    setFilteredMovies(
-      movies.filter((movie) =>
-        movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
-  }, [movies, searchQuery]);
+    setFilteredMovies(movies);
+  }, [movies]);
 
   useEffect(() => {
-    setFilteredSeries(
-      series.filter((serie) =>
-        serie.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
-  }, [series, searchQuery]);
+    setFilteredSeries(series);
+  }, [series]);
 
   const slides = [
     { imageUrl: './assets/lupin.png', text: 'Watch the new season now!' },
-    { imageUrl: './assets/barbie.png', text: 'New' },
-    { imageUrl: './assets/oppenheimer.png', text: 'New' },
+    {/*{ imageUrl: './assets/barbie.png'},
+  { imageUrl: './assets/oppenheimer.png'},*/}
   ];
 
   return (
     <div className="all">
-      <SearchBar onSearch={setSearchQuery} /> {/* Use the SearchBar component */}
-      <Banner slides={slides} slideInterval={3000} />
+      <Banner slides={slides} slideInterval={0} />
       <div className="moviesHome">
         <h2 className="moviesHome__listName">All movies</h2>
-        <MovieCarousel movies={filteredMovies} />
+        <div className="carousel_container">
+          <MovieCarousel movies={filteredMovies} />
+          </div>
+        
       </div>
 
       <div className="seriesHome">
         <h2 className="seriesHome__listName">All Series</h2>
-        <SerieCarousel series={filteredSeries} />
+        <div className="carousel_container">
+          <SerieCarousel series={filteredSeries} />
+          </div>
       </div>
     </div>
   );

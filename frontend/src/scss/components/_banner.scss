@@ -19,6 +19,7 @@
   &__slide {
     flex: 0 0 100%;
     transition: transform 0.5s ease-in-out;
+    cursor: pointer;
   }
   
   &__slide_active {

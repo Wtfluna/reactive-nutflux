@@ -17,6 +17,7 @@
 
   &__item {
     width: 250px;
+    background-repeat: no;
     height: 350px;
     border-radius: 20px;
     padding-bottom: 400px;
@@ -71,18 +72,19 @@
     width: 250px;
     color: variables.$title-color;
     margin: 0;
-
     text-align: left;
     border-radius: 20px;
   }
 }
 
+//responsive
+.carousel_container {
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
 
-/* Media query for medium-sized screens */
-@media (max-width: 768px) {
-  #moviesCarousel,
-  #seriesCarousel {
-    width: 70%;
-    /* Adjust other styles for medium screens */
-  }
+.moviesHome .carousel_container .seriesHome {
+  white-space: nowrap;
+  display: inline-block;
 }
