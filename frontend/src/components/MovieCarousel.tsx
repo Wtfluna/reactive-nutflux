@@ -9,39 +9,30 @@ interface MovieCarouselProps {
 }
 
 const MovieCarousel: React.FC<MovieCarouselProps> = ({ movies }) => {
-  const movieGap = 10;
-  const minItemWidth = 250; //largeur min en px
+  const movieGap = 20;
+  const minItemWidth = 250; 
 
-  //calcule le nbr dde films par slide, l'espace et la largeur des éléments en fonction de la largeur de l'écran
   const calculateItemsAndGap = () => {
-    const windowWidth = window.innerWidth;
-    const maxMoviesPerSlide = Math.floor(
-      windowWidth / (minItemWidth + movieGap)
-    );
-    const gap =
-      (windowWidth - maxMoviesPerSlide * minItemWidth) /
-      (maxMoviesPerSlide - 1);
-    const movieWidth = Math.max(
-      minItemWidth,
-      (windowWidth - gap * (maxMoviesPerSlide - 1)) / maxMoviesPerSlide
-    );
+    const maxMoviesPerSlide = movies.length; 
+    const gap = movieGap; 
+    const movieWidth = minItemWidth; 
+
     return {
-      moviesPerSlide: Math.min(maxMoviesPerSlide, maxMoviesPerSlide), // Limite le nombre de films par diapositive
-      gap: Math.max(movieGap, gap),
+      moviesPerSlide: maxMoviesPerSlide,
+      gap,
       movieWidth,
     };
   };
 
   const [itemsAndGap, setItemsAndGap] = useState(calculateItemsAndGap());
 
-  //ajuste le nbr d'éléments par slide, l'espace et la largeur des éléments en fonction de la largeur de l'écran
   useEffect(() => {
     const handleResize = () => {
       setItemsAndGap(calculateItemsAndGap());
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Appelle la fonction une fois au montage
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -50,7 +41,6 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ movies }) => {
 
   const { moviesPerSlide, gap, movieWidth } = itemsAndGap;
 
-  //divise les films en groupes(nbr de slides)
   const chunkedMovies = [];
   for (let i = 0; i < movies.length; i += moviesPerSlide) {
     chunkedMovies.push(movies.slice(i, i + moviesPerSlide));

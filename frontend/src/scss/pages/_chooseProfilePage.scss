@@ -3,13 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
 
 .profile {
-  margin: 20% 0% 0% 20%;
-  display: table;
+  margin: 80px auto;
+  align-items: center;
+  text-align: center;
 
   &__title {
     font-size: 3em;
     word-spacing: 5px;
-    text-align: center;
     color: variables.$title-color;
     font-family: sans-serif;
     font-weight: normal;
@@ -24,6 +24,7 @@
     height: auto;
     border-radius: 10px;
     border: 2px solid variables.$lavender;
+    cursor: pointer;
   }
 
   p {
@@ -68,56 +69,3 @@
     }
   }
 }
-
-/*@media screen and (max-width:520px) {
-
-   .card{
-     display: table;
-     margin: auto;
-   }
-  
-   .card + .card {
-    margin-left: auto;
-  }
-  
-  }
-  
-// Media query
-@media (max-width: 768px) {
-  .logo {
-    margin-top: 15px;
-
-    & img {
-      height: 36px;
-    }
-  }
-
-  header {
-    margin-bottom: 50px;
-  }
-
-  .list-profile-title {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-
-  .profile {
-    width: 150px;
-  }
-
-  p {
-    font-size: 0.8em;
-  }
-
-  .card {
-    display: block;
-    margin: 10px auto;
-  }
-
-  button {
-    margin-top: 20px;
-    width: 120px;
-    height: 36px;
-  }
-}
-*/

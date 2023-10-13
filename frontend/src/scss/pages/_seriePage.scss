@@ -7,33 +7,31 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
-  max-width: fit-content;
+  width: 50%;
   background-color: variables.$background-color;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 50px auto;
 
   &__title {
     font-size: 2rem;
     margin: 8px 0;
-    align-items: left;
+    text-align: left;
   }
 
   &__release_date,
   &__duration {
     font-size: 1rem;
     margin: 4px 0;
+    text-align: left;
   }
+
   .group {
     color: variables.$lavender;
-    align-items: left;
+    text-align: left;
   }
+
   &__summary {
     font-size: 1.2rem;
-    margin: 12px 0;
-    align-items: left;
+    text-align: left;
   }
 
   &__pegi {
@@ -44,6 +42,6 @@
     border-radius: 50%;
     background-color: variables.$lavender;
     font-weight: 900;
-    align-items: left;
+    text-align: left;
   }
 }

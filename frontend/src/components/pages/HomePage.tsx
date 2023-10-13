@@ -35,7 +35,7 @@ function HomePage() {
           <div className="banner__text">Watch the new season now!</div>
         </div>
       </a>
-      <h2 className="movie__title">My Movie's List</h2>
+      <h2 className="movie__title">Movies</h2>
       {lists.map((list) => (
         <>
           <h1 key={list.name} className="home__listName">
@@ -48,7 +48,7 @@ function HomePage() {
           </div>
         </>
       ))}
-      <h2 className="movie__title">My Serie's List</h2>
+      <h2 className="movie__title">Series</h2>
       {lists.map((list) => (
         <>
           <h1 key={list.name} className="home__listName">

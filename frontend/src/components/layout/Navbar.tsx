@@ -56,30 +56,26 @@ function Navbar() {
           <ul>
             {token && (
               <>
+              <li>
+                  <a href="/home">Home</a>
+                </li>
                 <li>
                   <a href="/series">Series</a>
                 </li>
                 <li>
                   <a href="/movies">Movies</a>
                 </li>
-                <li>
-                  <a href="">Explore by genre</a>
-                </li>
               </>
             )}
             {token && (
               <>
                 <li>
-                  <a href="" onClick={toggleDropdown}>
+                  <a href="#" onClick={toggleDropdown}>
                     Profile
                   </a>
                   {dropdownContent}
                 </li>
-                <li>
-                  <a href="/" onClick={logout}>
-                    Logout
-                  </a>
-                </li>
+                
               </>
             )}
             {!token && (

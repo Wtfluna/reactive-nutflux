@@ -9,29 +9,23 @@ interface SerieCarouselProps {
 }
 
 const SerieCarousel: React.FC<SerieCarouselProps> = ({ series }) => {
-  const minGap = 10;
-  const minItemWidth = 250; //largeur min en px
+  const minGap = 20;
+  const minItemWidth = 250; //en px
 
-  //calcule le nbr dse séries par slide, l'espace et la largeur des éléments en fonction de la largeur de l'écran
   const calculateItemsAndGap = () => {
-    const windowWidth = window.innerWidth;
-    const maxItemsPerSlide = Math.floor(windowWidth / (minItemWidth + minGap));
-    const gap =
-      (windowWidth - maxItemsPerSlide * minItemWidth) / (maxItemsPerSlide - 1);
-    const itemWidth = Math.max(
-      minItemWidth,
-      (windowWidth - gap * (maxItemsPerSlide - 1)) / maxItemsPerSlide
-    );
+    const maxItemsPerSlide = series.length; 
+    const gap = minGap;
+    const itemWidth = minItemWidth; 
+
     return {
-      itemsPerSlide: Math.min(maxItemsPerSlide, maxItemsPerSlide), //limit the number of items per slide
-      gap: Math.max(minGap, gap),
+      itemsPerSlide: maxItemsPerSlide,
+      gap,
       itemWidth,
     };
   };
 
   const [itemsAndGap, setItemsAndGap] = useState(calculateItemsAndGap());
 
-  //ajuste le nbr d'éléments par slide, l'espace et la largeur des éléments en fonction de la largeur de l'écran
   useEffect(() => {
     const handleResize = () => {
       setItemsAndGap(calculateItemsAndGap());
@@ -47,7 +41,6 @@ const SerieCarousel: React.FC<SerieCarouselProps> = ({ series }) => {
 
   const { itemsPerSlide, gap, itemWidth } = itemsAndGap;
 
-  //divise les séries en groupes(nbr de slides)
   const chunkedSeries = [];
   for (let i = 0; i < series.length; i += itemsPerSlide) {
     chunkedSeries.push(series.slice(i, i + itemsPerSlide));

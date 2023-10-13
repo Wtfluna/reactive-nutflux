@@ -1,66 +1,66 @@
 @use "../base/variables";
 @use "../components/button";
-@use "../components/banner";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap");
 
 .signup {
-  margin: 0 auto;
+  margin: 25px auto;
   padding: 60px;
   max-width: fit-content;
   text-align: center;
   background-color: variables.$background-color;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  &__h {
-    font-weight: 900;
-    font-size: 2rem;
-    padding: 0 80px;
+.signup__h {
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 0 80px;
+}
+
+.signup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  & input {
+    color: variables.$input-color;
+    background-color: variables.$background-color;
+    border: transparent;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: variables.$global-font-family;
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    & input {
-      color: variables.$input-color;
-      background-color: variables.$background-color;
-      border: transparent;
-      border-radius: 2px;
-      padding: 1rem;
-      font-size: 1rem;
-      font-family: variables.$global-font-family;
-    }
-    & button {
-      color: variables.$light-grey;
-      background-color: variables.$button-background-color;
-      border: transparent;
-      border-radius: 2px;
-      padding: 1rem;
-      font-size: 1rem;
-      font-weight: 600;
-      font-family: variables.$global-font-family;
-
-      &:hover {
-        background-color: variables.$hover-button-background-color;
-        transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-        cursor: pointer;
-      }
-    }
-  }
-  a {
-    color: variables.$lavender;
-    text-decoration: none;
-    font-weight: 900;
-    text-align: left;
+  & button {
+    color: variables.$light-grey;
+    background-color: variables.$button-background-color;
+    border: transparent;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: variables.$global-font-family;
 
     &:hover {
-      color: #e8e8e8;
+      background-color: variables.$hover-button-background-color;
       transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
       cursor: pointer;
     }
+  }
+}
+
+.signup a {
+  color: variables.$lavender;
+  text-decoration: none;
+  font-weight: 900;
+  text-align: left;
+
+  &:hover {
+    color: #e8e8e8;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    cursor: pointer;
   }
 }

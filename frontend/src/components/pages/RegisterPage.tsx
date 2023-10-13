@@ -55,9 +55,6 @@ export default function RegisterPage() {
           value={passwordReg}
           required
         />
-        <p>
-          <a href="#">Choose an avatar</a>
-        </p>
         <button role="button" type="submit">
           Sign Up
         </button>
