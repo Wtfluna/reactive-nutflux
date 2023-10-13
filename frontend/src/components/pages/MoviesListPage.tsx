@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import SearchBar from "../SearchBar"; // Import the SearchBar component
+import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
 import "../../scss/pages/_moviesList.scss";
 import Movie from "../../types/movie";
